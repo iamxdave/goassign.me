@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note</title>
+</head>
+<body>
+    <header>
+        <h1>Onboardio</h1>
+        <img src="/images/logo.png" alt="Goassign logo">
+    </header>
+    <nav>
+        <li><a href=""></a>Logo</li>
+        <li><a href=""></a>Features</li>
+        <li><a href=""></a>Plans</li>
+        <li><a href=""></a>Login</li>
+        <li><a href="">Start now for free</a></li>
+    </nav>
+    <main>
+        <h2>New note</h2>
+        <form action="">
+            <div>
+                <label for="title">Title: *</label>
+                <input type="text" name="title" id="title">
+                <label for="dueTo">Date of implementation:</label>
+                <input type="date" name="date" id="date">
+                <input type="time" name="time" id="time" value="00:00">
+                <div>
+                    <span id="errorTitle">Title is required</span>
+                    <span id="errorDate">Date is required</span>
+                </div>
+            </div>
+            <div>
+                <label for="description">Description: *</label>
+                <div>
+                    <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                    <span id="errorDescription"></span>
+                </div>
+            </div>
+            <div>
+                <input type="submit" value="add">
+                <a href="">Decline</a>
+                <p id="errorSummary">Form contains errors</p>
+            </div>
+        </form>
+    </main>
+    <footer>
+        Author: David Wrobel - iamxdave
+    </footer>
+</body>
+</html>
