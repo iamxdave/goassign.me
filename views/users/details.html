@@ -4,34 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css"/>
     <title>User</title>
 </head>
 <body>
     <header>
-        <h1>Onboardio</h1>
+        <h1>GOASSIGN.ME</h1>
         <img src="/images/logo.png" alt="Goassign logo">
     </header>
     <nav>
-        <li><a href=""></a>Logo</li>
-        <li><a href=""></a>Features</li>
-        <li><a href=""></a>Plans</li>
-        <li><a href=""></a>Login</li>
-        <li><a href="">Start now for free</a></li>
+        <ul>
+            <li><a href="" class="active">Main page</a></li>
+            <li><a href="">Features</a></li>
+            <li><a href="">Plans</a></li>
+            <li><a href="">Login</a></li>
+            <li><a href="">Start now for free</a></li>
+        </ul>
     </nav>
     <main>
         <h2>Details of xxx user</h2>
-        <form action="">
+        <form action="" class="form">
             <div>
-                <label for="firstname">Firstname: *</label>
-                <input type="text" name="firstname" id="firstname" placeholder="this" readonly>
+                <label for="firstname">Username:</label>
+                <input type="text" name="username" id="username" placeholder="this">
             </div>
             <div>
-                <label for="lastname">Lastname: *</label>
-                <input type="text" placeholder="this firstname" id="lastname" readonly>
-            </div>  
+                <label for="email">Email:</label>
+                <input type="text" placeholder="this email" id="email">
+            </div>
             <div>
-                <label for="email">Email: *</label>
-                <input type="text" placeholder="this email" id="email" readonly>
+                <label for="email">Password:</label>
+                <input type="password" placeholder="********" id="password">
+            </div>
+            <div>
+                <label for="firstname">Firstname:</label>
+                <input type="text" name="firstname" id="firstname" placeholder="this firstname">
+            </div>
+            <div>
+                <label for="lastname">Lastname:</label>
+                <input type="text" id="lastname" placeholder="this lastname">
+            </div> 
+            <div class="form-buttons">
+                <input type="submit" value="Edit" class="form-button-submit">
             </div>
         </form>
     </main>

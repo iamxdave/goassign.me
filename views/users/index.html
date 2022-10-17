@@ -4,28 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css"/>
     <title>Users</title>
 </head>
 <body>
     <header>
-        <h1>Onboardio</h1>
+        <h1>GOASSIGN.ME</h1>
         <img src="/images/logo.png" alt="Goassign logo">
     </header>
     <nav>
-        <li><a href=""></a>Logo</li>
-        <li><a href=""></a>Features</li>
-        <li><a href=""></a>Plans</li>
-        <li><a href=""></a>Login</li>
-        <li><a href="">Start now for free</a></li>
+        <ul>
+            <li><a href="" class="active">Main page</a></li>
+            <li><a href="">Features</a></li>
+            <li><a href="">Plans</a></li>
+            <li><a href="">Login</a></li>
+            <li><a href="">Start now for free</a></li>
+        </ul>
     </nav>
     <main>
         <h2>Users</h2>
-        <table>
+        <table class="table-list">
             <thead>
                 <tr>
                     <th>User</th>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
                     <th>Email</th>
                     <th>Actions</th>
                 </tr>
@@ -33,19 +34,18 @@
             <tbody>
                 <tr>
                     <td>me</td>
-                    <td>David</td>
-                    <td>Sparrow</td>
                     <td>xxx@gmail.com</td>
                     <td>
-                        <ul>
-                            <li><a href="">Details</a></li>
-                            <li><a href="">Edit</a></li>
-                            <li><a href="">Delete</a></li>
+                        <ul class="list-actions">
+                            <li><a href="" class="list-actions-button-details">Details</a></li>
+                            <li><a href="" class="list-actions-button-edit">Edit</a></li>
+                            <li><a href="" class="list-actions-button-delete">Delete</a></li>
                         </ul>
                     </td>
                 </tr>
             </tbody>
         </table>
+        <p><a href="" class="button-add">Add a new user</a></p>
     </main>
     <footer>
         Author: David Wrobel - iamxdave

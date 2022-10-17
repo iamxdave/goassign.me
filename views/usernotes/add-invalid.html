@@ -4,42 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css"/>
     <title>Note</title>
 </head>
 <body>
     <header>
-        <h1>Onboardio</h1>
+        <h1>GOASSIGN.ME</h1>
         <img src="/images/logo.png" alt="Goassign logo">
     </header>
     <nav>
-        <li><a href=""></a>Logo</li>
-        <li><a href=""></a>Features</li>
-        <li><a href=""></a>Plans</li>
-        <li><a href=""></a>Login</li>
-        <li><a href="">Start now for free</a></li>
+        <ul>
+            <li><a href="" class="active">Main page</a></li>
+            <li><a href="">Features</a></li>
+            <li><a href="">Plans</a></li>
+            <li><a href="">Login</a></li>
+            <li><a href="">Start now for free</a></li>
+        </ul>
     </nav>
     <main>
-        <h2>Add user</h2>
-        <form action="">
+        <h2>Add user to view the note</h2>
+        <form action="" class="form">
             <div>
-                <label for="firstname">Firstname: *</label>
-                <input type="text" name="firstname" id="firstname">
+                <label for="user">User: *</label>
+                <select name="user" id="user">
+                    <option>-- Select a user</option>
+                    <option value="1">user1</option>
+                    <option value="2">user2</option>
+                    <option value="3">user3</option>
+                </select>
             </div>
-            <span id="errorFirstname">Firstname is required</span>
+            <p id="errorUser">User is required</p>
             <div>
-                <label for="lastname">Lastname: *</label>
-                <input type="text" placeholder="this firstname" id="lastname">
-            </div> 
-            <span id="errorLastname">Lastname is required</span>  
-            <div>
-                <label for="email">Email: *</label>
-                <input type="text" placeholder="this email" id="email">
+                <label for="note">Note: *</label>
+                <select name="note" id="note">
+                    <option>-- Select a note</option>
+                    <option value="1">note1</option>
+                    <option value="2">note2</option>
+                    <option value="3">note3</option>
+                </select>
             </div>
-            <span id="errorEmail">Email is required</span>  
+            <p id="errorNote">Note is required</p>
+            <p>Permissions</p>
+            <div>
+                <label for="canWrite">Can write:</label>
+                <input type="checkbox" id="canWrite" name="canWrite" value="permission">
+            </div>
+            <span id="errorWrite"></span> 
+            <div>
+                <label for="canDelete">Can delete:</label>
+                <input type="checkbox" id="canDelete" name="canDelete" value="permission">
+            </div>
+            <span id="errorDelete"></span>
             <div>
                 <input type="submit" value="add">
                 <a href="">Decline</a>
-                <p id="errorSummary">Form contains errors</p>
+                <p id="errorSummary">Form is invalid</p>
             </div>
         </form>
     </main>

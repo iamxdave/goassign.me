@@ -4,42 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css"/>
     <title>User</title>
 </head>
 <body>
     <header>
-        <h1>Onboardio</h1>
+        <h1>GOASSIGN.ME</h1>
         <img src="/images/logo.png" alt="Goassign logo">
     </header>
     <nav>
-        <li><a href=""></a>Logo</li>
-        <li><a href=""></a>Features</li>
-        <li><a href=""></a>Plans</li>
-        <li><a href=""></a>Login</li>
-        <li><a href="">Start now for free</a></li>
+        <ul>
+            <li><a href="" class="active">Main page</a></li>
+            <li><a href="">Features</a></li>
+            <li><a href="">Plans</a></li>
+            <li><a href="">Login</a></li>
+            <li><a href="">Start now for free</a></li>
+        </ul>
     </nav>
     <main>
         <h2>Add user</h2>
-        <form action="">
+        <form action="" class="form">
             <div>
-                <label for="firstname">Firstname: *</label>
+                <label for="firstname">Username: <span class="symbol-required">*</span></label>
+                <input type="text" name="username" id="username">
+            </div>
+            <span id="errorUsername"></span>  
+            <div>
+                <label for="email">Email: <span class="symbol-required">*</span></label>
+                <input type="email" id="email">
+            </div>
+            <span id="errorEmail"></span>  
+            <div>
+                <label for="email">Password: <span class="symbol-required">*</span></label>
+                <input type="password" id="password">
+            </div>
+            <span id="errorPassword"></span> 
+            <div>
+                <label for="firstname">Firstname: <span class="symbol-required">*</span></label>
                 <input type="text" name="firstname" id="firstname">
             </div>
             <span id="errorFirstname"></span>
             <div>
-                <label for="lastname">Lastname: *</label>
-                <input type="text" placeholder="this firstname" id="lastname">
+                <label for="lastname">Lastname: <span class="symbol-required">*</span></label>
+                <input type="text" id="lastname">
             </div> 
             <span id="errorLastname"></span>  
-            <div>
-                <label for="email">Email: *</label>
-                <input type="text" placeholder="this email" id="email">
-            </div>
-            <span id="errorEmail"></span>  
-            <div>
-                <input type="submit" value="add">
-                <a href="">Decline</a>
-                <p id="errorSummary"></p>
+            <div class="form-buttons">
+                <p id="errorSummary" class="errors-text"></p>
+                <input type="submit" value="Add" class="form-button-submit">
+                <a href="" class="form-button-cancel">Decline</a>
             </div>
         </form>
     </main>
