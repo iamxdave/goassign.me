@@ -7,6 +7,10 @@ body {
     min-width: 600px;
 }
 
+img {
+    max-height: 100px;
+}
+
 header, main, footer {
     background-color: white;
 }

@@ -30,12 +30,10 @@
             </div>
             <div>
                 <label for="dueTo">Date of implementation:</label>
-                <input type="date" name="date" id="date">
+                <input type="datetime-local" name="date" id="date">
+                <span id="errorDate"></span>
                 <input type="time" name="time" id="time" value="00:00">
-                <div>
-                    <span id="errorTitle"></span>
-                    <span id="errorDate"></span>
-                </div>
+                <span id="errorTime"></span>
             </div>
             <div>
                 <label for="description">Description: *</label>
