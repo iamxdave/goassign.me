@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;0,800;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css"/>
     <title>User</title>
 </head>
@@ -14,20 +17,19 @@
     </header>
     <nav>
         <ul>
-            <li><a href="" class="active">Main page</a></li>
-            <li><a href="">Features</a></li>
-            <li><a href="">Plans</a></li>
-            <li><a href="">Login</a></li>
-            <li><a href="">Start now for free</a></li>
+            <li><a href="/views/" class="active">Main page</a></li>
+            <li><a href="/views/users/">Users</a></li>
+            <li><a href="/views/usernotes/">Usernotes</a></li>
+            <li><a href="/views/notes/">Notes</a></li>
         </ul>
     </nav>
     <main>
-        <h2>Add user to view the note</h2>
+        <h2>Add user to the note</h2>
         <form action="" class="form">
             <div>
-                <label for="user">User: *</label>
+                <label for="user">User: <span class="symbol-required">*</span></label>
                 <select name="user" id="user">
-                    <option>-- Select a user</option>
+                    <option>-- Select a user --</option>
                     <option value="1">user1</option>
                     <option value="2">user2</option>
                     <option value="3">user3</option>
@@ -35,30 +37,30 @@
             </div>
             <p id="errorUser"></p>
             <div>
-                <label for="note">Note: *</label>
+                <label for="note">Note: <span class="symbol-required">*</span></label>
                 <select name="note" id="note">
-                    <option>-- Select a note</option>
+                    <option>-- Select a note --</option>
                     <option value="1">note1</option>
                     <option value="2">note2</option>
                     <option value="3">note3</option>
                 </select>
             </div>
             <p id="errorNote"></p>
-            <p>Permissions</p>
-            <div>
+            <h4>Permissions</h4>
+            <div class="checkbox-permission">
                 <label for="canWrite">Can write:</label>
                 <input type="checkbox" id="canWrite" name="canWrite" value="permission">
             </div>
             <span id="errorWrite"></span> 
-            <div>
+            <div class="checkbox-permission">
                 <label for="canDelete">Can delete:</label>
                 <input type="checkbox" id="canDelete" name="canDelete" value="permission">
             </div>
             <span id="errorDelete"></span>
-            <div>
-                <input type="submit" value="add">
-                <a href="">Decline</a>
-                <p id="errorSummary"></p>
+            <div class="form-buttons">
+                <p id="errorSummary" class="errors-text"></p>
+                <input type="submit" value="Add" class="form-button-submit">
+                <a href="/views/usernotes/" class="form-button-cancel">Decline</a>
             </div>
         </form>
     </main>

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;0,800;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css"/>
     <title>User</title>
 </head>
@@ -14,11 +17,10 @@
     </header>
     <nav>
         <ul>
-            <li><a href="" class="active">Main page</a></li>
-            <li><a href="">Features</a></li>
-            <li><a href="">Plans</a></li>
-            <li><a href="">Login</a></li>
-            <li><a href="">Start now for free</a></li>
+            <li><a href="/views/" class="active">Main page</a></li>
+            <li><a href="/views/users/">Users</a></li>
+            <li><a href="/views/usernotes/">Usernotes</a></li>
+            <li><a href="/views/notes/">Notes</a></li>
         </ul>
     </nav>
     <main>
@@ -26,28 +28,62 @@
         <form action="" class="form">
             <div>
                 <label for="firstname">Username:</label>
-                <input type="text" name="username" id="username" placeholder="this">
+                <input type="text" name="username" id="username" value="this" disabled>
             </div>
             <div>
                 <label for="email">Email:</label>
-                <input type="text" placeholder="this email" id="email">
+                <input type="text" value="this email" id="email" disabled>
             </div>
             <div>
                 <label for="email">Password:</label>
-                <input type="password" placeholder="********" id="password">
+                <input type="password" placeholder="********" id="password" disabled>
             </div>
             <div>
                 <label for="firstname">Firstname:</label>
-                <input type="text" name="firstname" id="firstname" placeholder="this firstname">
+                <input type="text" name="firstname" id="firstname" value="this firstname" disabled>
             </div>
             <div>
                 <label for="lastname">Lastname:</label>
-                <input type="text" id="lastname" placeholder="this lastname">
+                <input type="text" id="lastname" value="this lastname" disabled>
             </div> 
-            <div class="form-buttons">
+            <div>
+                <p id="errorSummary" class="errors-text"></p>
                 <input type="submit" value="Edit" class="form-button-submit">
+                <a href="/views/users/" class="form-button-cancel">Decline</a>
             </div>
         </form>
+        <h2>Usernotes</h2>
+        <table class="table-list">
+            <thead>
+                <tr>
+                    <th rowspan="2">Note title</th>
+                    <th rowspan="2">Date of creation</th>
+                    <th rowspan="2">Deadline of implementation</th>
+                    <th colspan="2">Permissions</th>
+                </tr>
+                <tr>
+                    <th>Write</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>this is title</td>
+                    <td class="table-date">
+                        <input type="datetime-local" name="date" id="date" disabled>
+                    </td>
+                    <td class="table-date">
+                        <input type="datetime-local" name="date" id="date" disabled>
+                    </td>
+                    <td class="table-checkbox">
+                        <input type="checkbox" id="canWrite" name="canWrite" value="permission" checked disabled z>
+                    </td>
+                    <td class="table-checkbox">
+                        <input type="checkbox" id="canDelete" name="canDelete" value="permission" disabled>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </main>
     <footer>
         Author: David Wrobel - iamxdave

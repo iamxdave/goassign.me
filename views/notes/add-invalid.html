@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;0,800;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css"/>
     <title>Note</title>
 </head>
@@ -14,38 +17,36 @@
     </header>
     <nav>
         <ul>
-            <li><a href="" class="active">Main page</a></li>
-            <li><a href="">Features</a></li>
-            <li><a href="">Plans</a></li>
-            <li><a href="">Login</a></li>
-            <li><a href="">Start now for free</a></li>
+            <li><a href="/views/" class="active">Main page</a></li>
+            <li><a href="/views/users/">Users</a></li>
+            <li><a href="/views/usernotes/">Usernotes</a></li>
+            <li><a href="/views/notes/">Notes</a></li>
         </ul>
     </nav>
     <main>
-        <h2>New note</h2>
+        <h2>Add a new note</h2>
         <form action="" class="form">
             <div>
-                <label for="title">Title: *</label>
+                <label for="title">Title: <span class="symbol-required">*</span></label>
                 <input type="text" name="title" id="title">
+                <span id="errorTitle" class="errors-text">Title is required</span>
             </div>
             <div>
                 <label for="dueTo">Date of implementation:</label>
-                <input type="date" name="date" id="date">
-                <span id="errorDate">Title is required</span>
-                <input type="time" name="time" id="time" value="00:00">
-                <span id="errorTime">Date is required</span>
+                <input type="datetime-local" name="date" id="date">
+                <span id="errorDate" class="errors-text">Date is required</span>
             </div>
             <div>
-                <label for="description">Description: *</label>
+                <label for="description">Description: <span class="symbol-required">*</span></label>
                 <div>
                     <textarea name="description" id="description" cols="30" rows="10"></textarea>
-                    <span id="errorDescription"></span>
+                    <span id="errorDescription" class="errors-text">Description is required</span>
                 </div>
             </div>
-            <div>
-                <input type="submit" value="add">
-                <a href="">Decline</a>
-                <p id="errorSummary">Form is invalid</p>
+            <div class="form-buttons">
+                <p id="errorSummary" class="errors-text">Form contains errors</p>
+                <input type="submit" value="Add" class="form-button-submit">
+                <a href="/views/notes/" class="form-button-cancel">Decline</a>
             </div>
         </form>
     </main>
