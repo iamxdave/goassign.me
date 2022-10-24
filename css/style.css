@@ -26,7 +26,7 @@ header, footer {
 
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 0rem 5rem;
 }
@@ -34,10 +34,22 @@ header {
 footer {
     display: flex;
     justify-content: space-around;
+    align-items: flex-start;
+    padding-top: 2rem;
+    height: 7vh;
 }
 
-footer div span, footer span {
+footer div {
     padding: 0rem 3rem;
+}
+
+footer div.author-links {
+    display: flex;
+}
+
+footer img {
+    width: 32px;
+    height: 32px;
 }
 
 header img {
