@@ -4,62 +4,83 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;0,800;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css"/>
     <title>User</title>
 </head>
 <body>
     <header>
-        <h1>GOASSIGN.ME</h1>
-        <img src="/images/logo.png" alt="Goassign logo">
+        <div class="container">
+            <div>              
+                <a href="/views/">
+                    <img src="/images/logo.gif" alt="Goassign.me logo" href="/views/" width="100%">
+                </a>
+            </div>
+            <div>
+                <nav>
+                    <ul>
+                        <li><a href="/views/users/" class="btn-style">Users</a></li>
+                        <li><a href="/views/usernotes/" class="btn-style">Usernotes</a></li>
+                        <li><a href="/views/notes/" class="btn-style">Notes</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
-    <nav>
-        <ul>
-            <li><a href="/views/" class="active">Main page</a></li>
-            <li><a href="/views/users/">Users</a></li>
-            <li><a href="/views/usernotes/">Usernotes</a></li>
-            <li><a href="/views/notes/">Notes</a></li>
-        </ul>
-    </nav>
     <main>
-        <h2>Add user</h2>
-        <form action="" class="form">
-            <div>
-                <label for="firstname">Username: <span class="symbol-required">*</span></label>
-                <input type="text" name="username" id="username">
-            </div>
-            <span id="errorUsername"></span>  
-            <div>
-                <label for="email">Email: <span class="symbol-required">*</span></label>
-                <input type="email" id="email">
-            </div>
-            <span id="errorEmail"></span>  
-            <div>
-                <label for="email">Password: <span class="symbol-required">*</span></label>
-                <input type="password" id="password">
-            </div>
-            <span id="errorPassword"></span> 
-            <div>
-                <label for="firstname">Firstname: <span class="symbol-required">*</span></label>
-                <input type="text" name="firstname" id="firstname">
-            </div>
-            <span id="errorFirstname"></span>
-            <div>
-                <label for="lastname">Lastname: <span class="symbol-required">*</span></label>
-                <input type="text" id="lastname">
-            </div> 
-            <span id="errorLastname"></span>  
-            <div class="form-buttons">
-                <p id="errorSummary" class="errors-text"></p>
-                <input type="submit" value="Add" class="form-button-submit">
-                <a href="/views/users/" class="form-button-cancel">Decline</a>
-            </div>
-        </form>
+        <section>           
+            <h2>Add user</h2>
+            <form action="" class="form">
+                <div>
+                    <label for="firstname">Username: <span class="symbol-required">*</span></label>
+                    <input type="text" name="username" id="username">
+                </div>
+                <span id="errorUsername"></span>  
+                <div>
+                    <label for="email">Email: <span class="symbol-required">*</span></label>
+                    <input type="email" id="email">
+                </div>
+                <span id="errorEmail"></span>  
+                <div>
+                    <label for="email">Password: <span class="symbol-required">*</span></label>
+                    <input type="password" id="password">
+                </div>
+                <span id="errorPassword"></span> 
+                <div>
+                    <label for="firstname">Firstname: <span class="symbol-required">*</span></label>
+                    <input type="text" name="firstname" id="firstname">
+                </div>
+                <span id="errorFirstname"></span>
+                <div>
+                    <label for="lastname">Lastname: <span class="symbol-required">*</span></label>
+                    <input type="text" id="lastname">
+                </div> 
+                <span id="errorLastname"></span>  
+                <div class="form-buttons">
+                    <p id="errorSummary" class="errors-text"></p>
+                    <input type="submit" value="Add" class="form-button-submit">
+                    <a href="/views/users/" class="form-button-cancel">Decline</a>
+                </div>
+            </form>
+        </section>
     </main>
     <footer>
-        Author: David Wrobel - iamxdave
+        <div class="container">
+            <div class="info">
+                <span>©goassign.me 2022</span>
+                <a>Terms & Privacy</a>
+            </div>
+            <div class="info">
+                <span>David Wróbel - iamxdave</span>
+                <div>
+                    <a href="https://www.github.com/iamxdave">
+                        <img src="/images/icons/github.svg" alt="Github link">
+                    </a>
+                    <a href="https://www.linkedin.com/in/iamxdave">
+                        <img src="/images/icons/linkedin.svg" alt="Linkedin link">
+                    </a>
+                </div>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
