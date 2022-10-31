@@ -27,33 +27,35 @@
         </div>
     </header>
     <main>
-        <section>
-            <h2>Edit a note</h2>
-            <form class="form form-larger">
+        <div class="main-divider">
+            <section>
+                <h2>Edit a note</h2>
+                <form class="form form-larger">
+                    
+                    <label for="title">Title: <span class="symbol-required">*</span></label>
+                    <input type="text" name="title" id="title" value="this">
+                    <span id="errorTitle"></span>
                 
-                <label for="title">Title: <span class="symbol-required">*</span></label>
-                <input type="text" name="title" id="title" value="this">
-                <span id="errorTitle"></span>
-            
-                <label for="creation">Creation:</label>
-                <input type="date" name="creation" id="creation" value="2018-06-10" disabled>
+                    <label for="creation">Creation:</label>
+                    <input type="date" name="creation" id="creation" value="2018-06-10" disabled>
+                    
+                    <label for="implementation">Implementation:</label>
+                    <input type="date" name="implementation" id="implementation" value="2018-06-12" disabled>
                 
-                <label for="implementation">Implementation:</label>
-                <input type="date" name="implementation" id="implementation" value="2018-06-12" disabled>
-            
-                <label for="description">Description: <span class="symbol-required">*</span></label>
-                
-                <textarea name="description" id="description" cols="30" rows="10">lorem lorem lorem lorem</textarea>
-                <span id="errorDescription"></span>     
-                
-                <p id="errorSummary" class="errors-text hidden-error">Form contains errors</p>
+                    <label for="description">Description: <span class="symbol-required">*</span></label>
+                    
+                    <textarea name="description" id="description" cols="30" rows="10">lorem lorem lorem lorem</textarea>
+                    <span id="errorDescription"></span>     
+                    
+                    <p id="errorSummary" class="errors-text hidden-error">Form contains errors</p>
 
-                <div class="form-buttons">
-                    <input type="submit" value="Confirm" class="form-button-submit">
-                    <a href="/views/notes/" class="form-button-cancel">Decline</a>
-                </div>
-            </form>           
-        </section>
+                    <div class="form-buttons">
+                        <input type="submit" value="Confirm" class="form-button-submit">
+                        <a href="/views/notes/" class="form-button-cancel">Decline</a>
+                    </div>
+                </form>           
+            </section>
+        </div>
     </main>
     <footer>
         <div class="container">

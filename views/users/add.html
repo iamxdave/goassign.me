@@ -27,37 +27,39 @@
         </div>
     </header>
     <main>
-        <section>           
-            <h2>Add user</h2>
-            <form class="form">
-                <label for="username">Username: <span class="symbol-required">*</span></label>
-                <input type="text" name="username" id="username">
-                <span id="errorUsername"></span>  
-                
-                <label for="email">Email: <span class="symbol-required">*</span></label>
-                <input type="email" id="email">
-                <span id="errorEmail"></span>  
-                
-                <label for="password">Password: <span class="symbol-required">*</span></label>
-                <input type="password" id="password">
-                <span id="errorPassword"></span> 
+        <div class="main-divider">
+            <section>           
+                <h2>Add user</h2>
+                <form class="form">
+                    <label for="username">Username: <span class="symbol-required">*</span></label>
+                    <input type="text" name="username" id="username">
+                    <span id="errorUsername"></span>  
+                    
+                    <label for="email">Email: <span class="symbol-required">*</span></label>
+                    <input type="email" id="email">
+                    <span id="errorEmail"></span>  
+                    
+                    <label for="password">Password: <span class="symbol-required">*</span></label>
+                    <input type="password" id="password">
+                    <span id="errorPassword"></span> 
 
-                <label for="firstname">Firstname: <span class="symbol-required">*</span></label>
-                <input type="text" name="firstname" id="firstname">
-                <span id="errorFirstname"></span>
+                    <label for="firstname">Firstname: <span class="symbol-required">*</span></label>
+                    <input type="text" name="firstname" id="firstname">
+                    <span id="errorFirstname"></span>
 
-                <label for="lastname">Lastname: <span class="symbol-required">*</span></label>
-                <input type="text" id="lastname">
-                <span id="errorLastname"></span>  
+                    <label for="lastname">Lastname: <span class="symbol-required">*</span></label>
+                    <input type="text" id="lastname">
+                    <span id="errorLastname"></span>  
 
-                <p id="errorSummary" class="errors-text hidden-error">Form contains errors</p>
+                    <p id="errorSummary" class="errors-text hidden-error">Form contains errors</p>
 
-                <div class="form-buttons">
-                    <input type="submit" value="Add" class="form-button-submit">
-                    <a href="/views/users/" class="form-button-cancel">Decline</a>
-                </div>
-            </form>
-        </section>
+                    <div class="form-buttons">
+                        <input type="submit" value="Add" class="form-button-submit">
+                        <a href="/views/users/" class="form-button-cancel">Decline</a>
+                    </div>
+                </form>
+            </section>
+        </div>
     </main>
     <footer>
         <div class="container">

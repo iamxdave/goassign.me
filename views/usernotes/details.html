@@ -27,36 +27,38 @@
         </div>
     </header>
         <main>
-            <section>
-            <h2>xxxs' permissions</h2>
-            <form class="form">
-                
-                <label for="user">User:</label>
-                <input type="text" id="user" value="this user" disabled>
-                <span id="errorUser"></span>
-                
-                <label for="note">Note:</label>
-                <input type="text" id="note" value="this note" disabled>      
-                <span id="errorNote"></span>
+            <div class="main-divider">
+                <section>
+                <h2>xxxs' permissions</h2>
+                <form class="form">
+                    
+                    <label for="user">User:</label>
+                    <input type="text" id="user" value="this user" disabled>
+                    <span id="errorUser"></span>
+                    
+                    <label for="note">Note:</label>
+                    <input type="text" id="note" value="this note" disabled>      
+                    <span id="errorNote"></span>
 
-                <h4>Permissions</h4>
-                
-                <label for="write">Write:</label>
-                <input type="checkbox" id="write" name="canWrite" value="permission" checked disabled>
-                <span id="errorWrite"></span> 
-                
-                <label for="delete">Delete:</label>
-                <input type="checkbox" id="delete" name="canDelete" value="permission"  disabled>
-                <span id="errorDelete"></span>
-                
-                <p id="errorSummary" class="errors-text hidden-error">Form contains errors</p>
+                    <h4>Permissions</h4>
+                    
+                    <label for="write">Write:</label>
+                    <input type="checkbox" id="write" name="canWrite" value="permission" checked disabled>
+                    <span id="errorWrite"></span> 
+                    
+                    <label for="delete">Delete:</label>
+                    <input type="checkbox" id="delete" name="canDelete" value="permission"  disabled>
+                    <span id="errorDelete"></span>
+                    
+                    <p id="errorSummary" class="errors-text hidden-error">Form contains errors</p>
 
-                <div class="form-buttons">
-                    <a href="/views/usernotes/edit.html" class="form-button-submit">Edit</a>
-                    <a href="/views/usernotes/" class="form-button-cancel">Back</a>
-                </div>
-            </form>
-        </section>
+                    <div class="form-buttons">
+                        <a href="/views/usernotes/edit.html" class="form-button-submit">Edit</a>
+                        <a href="/views/usernotes/" class="form-button-cancel">Back</a>
+                    </div>
+                </form>
+            </section>
+            </div>
     </main>
     <footer>
         <div class="container">

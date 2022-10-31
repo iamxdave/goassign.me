@@ -27,48 +27,50 @@
         </div>
     </header>
     <main>
-        <section>
-            <h2>Add user permissions</h2>
-            <form class="form">
-                
-                <label for="user">User: <span class="symbol-required">*</span></label>
-                <select name="user" id="user">
-                    <option>-- Select a user</option>
-                    <option value="1">user1</option>
-                    <option value="2">user2</option>
-                    <option value="3">user3</option>
-                </select>
-                <span id="errorUser" class="errors-text">User is not selected</span>
-                
-                <label for="note">Note: <span class="symbol-required">*</span></label>
-                <select name="note" id="note">
-                    <option>-- Select a note</option>
-                    <option value="1">note1</option>
-                    <option value="2">note2</option>
-                    <option value="3">note3</option>
-                </select>
-                <span id="errorNote" class="errors-text">Note is not selected</span>
-                
-                <h4>Permissions</h4>
-                
-                <label for="write">Can write:</label>
-                <input type="checkbox" id="write" name="canWrite" value="permission">
-                
-                <span id="errorWrite"></span> 
-                
-                <label for="delete">Can delete:</label>
-                <input type="checkbox" id="delete" name="canDelete" value="permission">
-                
-                <span id="errorDelete"></span>
-                
-                <p id="errorSummary" class="errors-text">Form contains errors</p>
-                
-                <div class="form-buttons">
-                    <input type="submit" value="Add" class="form-button-submit">
-                    <a href="" class="form-button-cancel">Decline</a>
-                </div>
-            </form>
-        </section>
+        <div class="main-divider">
+            <section>
+                <h2>Add user permissions</h2>
+                <form class="form">
+                    
+                    <label for="user">User: <span class="symbol-required">*</span></label>
+                    <select name="user" id="user">
+                        <option>-- Select a user</option>
+                        <option value="1">user1</option>
+                        <option value="2">user2</option>
+                        <option value="3">user3</option>
+                    </select>
+                    <span id="errorUser" class="errors-text">User is not selected</span>
+                    
+                    <label for="note">Note: <span class="symbol-required">*</span></label>
+                    <select name="note" id="note">
+                        <option>-- Select a note</option>
+                        <option value="1">note1</option>
+                        <option value="2">note2</option>
+                        <option value="3">note3</option>
+                    </select>
+                    <span id="errorNote" class="errors-text">Note is not selected</span>
+                    
+                    <h4>Permissions</h4>
+                    
+                    <label for="write">Can write:</label>
+                    <input type="checkbox" id="write" name="canWrite" value="permission">
+                    
+                    <span id="errorWrite"></span> 
+                    
+                    <label for="delete">Can delete:</label>
+                    <input type="checkbox" id="delete" name="canDelete" value="permission">
+                    
+                    <span id="errorDelete"></span>
+                    
+                    <p id="errorSummary" class="errors-text">Form contains errors</p>
+                    
+                    <div class="form-buttons">
+                        <input type="submit" value="Add" class="form-button-submit">
+                        <a href="" class="form-button-cancel">Decline</a>
+                    </div>
+                </form>
+            </section>
+        </div>
     </main>
     <footer>
         <div class="container">
