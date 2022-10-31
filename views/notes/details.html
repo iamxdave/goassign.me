@@ -29,25 +29,22 @@
     <main>
         <section>
             <h2>xxx</h2>
-            <form action="" class="form">
-                <div>
-                    <label for="title">Title: <span class="symbol-required">*</span></label>
-                    <input type="text" name="title" id="title" value="this" disabled>
-                </div>
-                <div>
-                    <label for="dueTo">Date of implementation:</label>
-                    <input type="datetime-local" name="date" id="date" value="2018-06-12T19:30" disabled>
-                    <span id="errorDate"></span>
-                </div>
-                <div>
-                    <label for="description">Description: <span class="symbol-required">*</span></label>
-                    <div>
-                        <textarea name="description" id="description" cols="30" rows="10" disabled>lorem lorem lorem lorem</textarea>
-                        <span id="errorDescription"></span>
-                    </div>
-                </div>
+            <form action="" class="form form-larger">
+                
+                <label for="title">Title: <span class="symbol-required">*</span></label>
+                <input type="text" name="title" id="title" value="this" disabled>
+            
+                <label for="implementation">Implementation:</label>
+                <input type="datetime-local" name="date" id="date" value="2018-06-12T19:30" disabled>
+                <span id="errorDate"></span>
+            
+                <label for="description">Description: <span class="symbol-required">*</span></label>
+                <textarea name="description" id="description" cols="30" rows="10" disabled>lorem lorem lorem lorem</textarea>
+                <span id="errorDescription"></span>
+
+                <p id="errorSummary" class="errors-text hidden-error">Form contains errors</p>
+
                 <div class="form-buttons">
-                    <p id="errorSummary" class="errors-text"></p>
                     <input type="submit" value="Edit" class="form-button-submit">
                 </div>
             </form>
@@ -56,11 +53,11 @@
     <main>
         <section>
             <h2>User permissions for the note</h2>
-            <table class="table-list">
+            <table class="table-list table-permission">
                 <thead>
                     <tr>
                         <th rowspan="2">User</th>
-                        <th rowspan="2">Email</th>
+                        <th rowspan="2" class="display">Email</th>
                         <th colspan="2">Permissions</th>
                     </tr>
                     <tr>
@@ -70,20 +67,22 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>me</td>
-                        <td>xxx@gmail.com</td>
+                        <td>davidthesuperior</td>
+                        <td class="display">david.sparrow2001@gmail.com</td>
                         <td class="table-checkbox">
-                            <input type="checkbox" id="canWrite" name="canWrite" value="permission" checked disabled z>
+                            <input type="checkbox" id="rite" name="write" value="permission" checked disabled z>
                         </td>
                         <td class="table-checkbox">
-                            <input type="checkbox" id="canDelete" name="canDelete" value="permission" disabled>
+                            <input type="checkbox" id="delete" name="delete" value="permission" disabled>
                         </td>
                     </tr>
+                    <tr class="display-small">
+                        <td colspan="3">david.sparrow2001@gmail.com</td>
+                    </tr>
                 </tbody>
-            </table>
-            
-            <div class="form form-buttons">
-                <a href="/views/notes/" class="form-button-cancel">Decline</a>
+            </table>       
+            <div class="form-buttons">
+                <a href="/views/notes/" class="form-button-cancel">Back</a>
             </div>
         </section>
     </main>

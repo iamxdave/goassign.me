@@ -29,27 +29,25 @@
     <main>
         <section>
             <h2>Edit a note</h2>
-            <form action="" class="form">
-                <div>
-                    <label for="title">Title: <span class="symbol-required">*</span></label>
-                    <input type="text" name="title" id="title" placeholder="this">
-                    <span id="errorTitle" class="errors-text">Title is required</span>
-                </div>
+            <form action="" class="form form-larger">
+
+                <label for="title">Title: <span class="symbol-required">*</span></label>
+                <input type="text" name="title" id="title" value="this">
                 <span id="errorTitle" class="errors-text">Title is required</span>
-                <div>
-                    <label for="dueTo">Date of implementation:</label>
-                    <input type="datetime-local" name="date" id="date" value="2018-06-12T19:30">
-                    <span id="errorDate" class="errors-text">Date is required</span>
-                </div>
-                <div>
-                    <label for="description">Description: <span class="symbol-required">*</span></label>
-                    <div>
-                        <textarea name="description" id="description" cols="30" rows="10">lorem lorem lorem lorem</textarea>
-                        <span id="errorDescription" class="errors-text">Description is required</span>
-                    </div>
-                </div>
+
+                <label for="implementation">Implementation:</label>
+                <input type="date" name="date" id="date" value="2022-12-12">
+                <span id="errorDate" class="errors-text">Date is required</span>
+
+
+                <label for="description">Description: <span class="symbol-required">*</span></label>
+                
+                <textarea name="description" id="description" cols="30" rows="10">lorem lorem lorem lorem</textarea>
+                <span id="errorDescription" class="errors-text">Description is required</span>
+                
+                <p id="errorSummary" class="errors-text">Form contains errors</p>
+
                 <div class="form-buttons">
-                    <p id="errorSummary" class="errors-text">Form contains errors</p>
                     <input type="submit" value="Confirm" class="form-button-submit">
                     <a href="/views/notes/" class="form-button-cancel">Decline</a>
                 </div>

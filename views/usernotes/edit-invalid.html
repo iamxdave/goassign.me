@@ -28,29 +28,27 @@
     </header>
     <main>
         <section>  
-            <h2>Edit user permissions for the note</h2>
+            <h2>Edit user permissions</h2>
             <form action="" class="form">
-                <div>
-                    <label for="user">User: <span class="symbol-required">*</span></label>
-                    <input type="text" id="user" value="this user" disabled>
-                </div>
-                <p id="errorUser" class="errors-text">User is not selected</p>
-                <div>
-                    <label for="note">Note: <span class="symbol-required">*</span></label>
-                    <input type="text" id="note" value="this note" disabled>
-                </div>
-                <p id="errorNote" class="errors-text">Note is not selected</p>
+
+                <label for="user">User: <span class="symbol-required">*</span></label>
+                <input type="text" id="user" value="this user" disabled>
+                <span id="errorUser" class="errors-text">User is not selected</span>
+
+                <label for="note">Note: <span class="symbol-required">*</span></label>
+                <input type="text" id="note" value="this note" disabled>
+                <span id="errorNote" class="errors-text">Note is not selected</span>
+                
                 <h4>Permissions</h4>
-                <div class="checkbox-permission">
-                    <label for="canWrite">Can write:</label>
-                    <input type="checkbox" id="canWrite" name="canWrite" value="permission">
-                </div>
-                <div class="checkbox-permission">
-                    <label for="canDelete">Can delete:</label>
-                    <input type="checkbox" id="canDelete" name="canDelete" value="permission">
-                </div>
+                <label for="canWrite">Write:</label>
+                <input type="checkbox" id="canWrite" name="write" value="permission">
+
+                <label for="canDelete">Delete:</label>
+                <input type="checkbox" id="canDelete" name="delete" value="permission">
+
+                <p id="errorSummary" class="errors-text">Form contains errors</p>
+                
                 <div class="form-buttons">
-                    <p id="errorSummary" class="errors-text" class="errors-text">Form contains errors</p>
                     <input type="submit" value="Confirm" class="form-button-submit">
                     <a href="/views/usernotes/" class="form-button-cancel">Decline</a>
                 </div>

@@ -28,41 +28,43 @@
     </header>
     <main>
         <section>
-            <h2>Add user to the note</h2>
+            <h2>Add user permissions</h2>
             <form action="" class="form">
-                <div>
-                    <label for="user">User: <span class="symbol-required">*</span></label>
-                    <select name="user" id="user">
-                        <option>-- Select a user --</option>
-                        <option value="1">user1</option>
-                        <option value="2">user2</option>
-                        <option value="3">user3</option>
-                    </select>
-                </div>
-                <p id="errorUser"></p>
-                <div>
-                    <label for="note">Note: <span class="symbol-required">*</span></label>
-                    <select name="note" id="note">
-                        <option>-- Select a note --</option>
-                        <option value="1">note1</option>
-                        <option value="2">note2</option>
-                        <option value="3">note3</option>
-                    </select>
-                </div>
-                <p id="errorNote"></p>
+                
+                <label for="user">User: <span class="symbol-required">*</span></label>
+                <select name="user" id="user">
+                    <option>-- Select a user --</option>
+                    <option value="1">user1</option>
+                    <option value="2">user2</option>
+                    <option value="3">user3</option>
+                </select>
+                <span id="errorUser"></span>
+                
+                <label for="note">Note: <span class="symbol-required">*</span></label>
+                <select name="note" id="note">
+                    <option>-- Select a note --</option>
+                    <option value="1">note1</option>
+                    <option value="2">note2</option>
+                    <option value="3">note3</option>
+                </select>
+                
+                <span id="errorNote"></span>
+                
                 <h4>Permissions</h4>
-                <div class="checkbox-permission">
-                    <label for="canWrite">Can write:</label>
-                    <input type="checkbox" id="canWrite" name="canWrite" value="permission">
-                </div>
+                
+                <label for="canWrite">Can write:</label>
+                <input type="checkbox" id="canWrite" name="canWrite" value="permission">
+                
                 <span id="errorWrite"></span> 
-                <div class="checkbox-permission">
-                    <label for="canDelete">Can delete:</label>
-                    <input type="checkbox" id="canDelete" name="canDelete" value="permission">
-                </div>
+                
+                <label for="canDelete">Can delete:</label>
+                <input type="checkbox" id="canDelete" name="canDelete" value="permission">
+                
                 <span id="errorDelete"></span>
+
+                <p id="errorSummary" class="errors-text hidden-error">Form contains errors</p>
+
                 <div class="form-buttons">
-                    <p id="errorSummary" class="errors-text"></p>
                     <input type="submit" value="Add" class="form-button-submit">
                     <a href="/views/usernotes/" class="form-button-cancel">Decline</a>
                 </div>

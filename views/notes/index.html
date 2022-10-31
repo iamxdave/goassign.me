@@ -33,21 +33,26 @@
                 <thead>
                     <tr>
                         <th>Title</th>
-                        <th>Date of creation</th>
-                        <th>Deadline of implementation</th>
-                        <th>Actions</th>
+                        <th>Implementation</th>
+                        <th class="display">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>First things to do</td>
+                        <td>this is title of my note and its super fun to work with and it's not even the longest title possible!</td>
                         <td class="table-date">
-                            <input type="datetime-local" name="date" id="date" disabled>
+                            <input type="text" name="date" id="date" value="dd.mm.rrrr" disabled>
                         </td>
-                        <td class="table-date">
-                            <input type="datetime-local" name="date" id="date" disabled>
+                        <td class="display">
+                            <ul class="list-actions">
+                                <li><a href="/views/notes/details.html" class="list-actions-button-details">Details</a></li>
+                                <li><a href="/views/notes/edit.html" class="list-actions-button-edit">Edit</a></li>
+                                <li><a href="" class="list-actions-button-delete">Delete</a></li>
+                            </ul>
                         </td>
-                        <td>
+                    </tr>
+                    <tr class="display-small">
+                        <td colspan="2">
                             <ul class="list-actions">
                                 <li><a href="/views/notes/details.html" class="list-actions-button-details">Details</a></li>
                                 <li><a href="/views/notes/edit.html" class="list-actions-button-edit">Edit</a></li>
@@ -57,7 +62,9 @@
                     </tr>
                 </tbody>
             </table>
-            <p><a href="/views/notes/add.html" class="button-add">Add new note</a></p>
+            <div class="form-buttons">
+                <a href="/views/notes/add.html" class="button-add">Add new note</a>
+            </div>
         </section>
     </main>
     <footer>

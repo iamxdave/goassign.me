@@ -30,30 +30,26 @@
         <section>
             <h2>Details of xxx user</h2>
             <form action="" class="form">
-                <div>
-                    <label for="firstname">Username:</label>
-                    <input type="text" name="username" id="username" value="this" disabled>
-                </div>
-                <div>
-                    <label for="email">Email:</label>
-                    <input type="text" value="this email" id="email" disabled>
-                </div>
-                <div>
-                    <label for="email">Password:</label>
-                    <input type="password" placeholder="********" id="password" disabled>
-                </div>
-                <div>
-                    <label for="firstname">Firstname:</label>
-                    <input type="text" name="firstname" id="firstname" value="this firstname" disabled>
-                </div>
-                <div>
-                    <label for="lastname">Lastname:</label>
-                    <input type="text" id="lastname" value="this lastname" disabled>
-                </div> 
-                <div>
-                    <p id="errorSummary" class="errors-text"></p>
+
+                <label for="firstname">Username:</label>
+                <input type="text" name="username" id="username" value="this" disabled>
+                
+                <label for="email">Email:</label>
+                <input type="text" value="this email" id="email" disabled>
+
+                <label for="email">Password:</label>
+                <input type="password" placeholder="********" id="password" disabled>
+
+                <label for="firstname">Firstname:</label>
+                <input type="text" name="firstname" id="firstname" value="this firstname" disabled>
+
+                <label for="lastname">Lastname:</label>
+                <input type="text" id="lastname" value="this lastname" disabled>
+
+                <p id="errorSummary" class="errors-text hidden-error">Form contains errors</p>
+                
+                <div class="form-buttons">
                     <input type="submit" value="Edit" class="form-button-submit">
-                    <a href="/views/users/" class="form-button-cancel">Decline</a>
                 </div>
             </form>
         </section>
@@ -65,8 +61,7 @@
                 <thead>
                     <tr>
                         <th rowspan="2">Note title</th>
-                        <th rowspan="2">Date of creation</th>
-                        <th rowspan="2">Deadline of implementation</th>
+                        <th rowspan="2">Implementation</th>
                         <th colspan="2">Permissions</th>
                     </tr>
                     <tr>
@@ -76,22 +71,22 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>this is title</td>
+                        <td>this is title of my note and its super fun to work with and it's not even the longest title possible!</td>
                         <td class="table-date">
-                            <input type="datetime-local" name="date" id="date" disabled>
-                        </td>
-                        <td class="table-date">
-                            <input type="datetime-local" name="date" id="date" disabled>
+                            <input type="text" name="date" id="date" value="dd.mm.rrrr" disabled>
                         </td>
                         <td class="table-checkbox">
-                            <input type="checkbox" id="canWrite" name="canWrite" value="permission" checked disabled z>
+                            <input type="checkbox" id="canWrite" name="canWrite" value="permission" checked disabled>
                         </td>
                         <td class="table-checkbox">
                             <input type="checkbox" id="canDelete" name="canDelete" value="permission" disabled>
                         </td>
-                    </tr>
+                    </tr> 
                 </tbody>
             </table>
+            <div class="form-buttons">
+                <a href="/views/users/" class="form-button-cancel">Back</a>
+            </div>
         </section>
     </main>
     <footer>

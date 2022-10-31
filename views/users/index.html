@@ -34,14 +34,23 @@
                     <tr>
                         <th>User</th>
                         <th>Email</th>
-                        <th>Actions</th>
+                        <th class="display">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>me</td>
-                        <td>xxx@gmail.com</td>
-                        <td>
+                        <td>David01234567</td>
+                        <td>david.vincino1337@gmail.com</td>
+                        <td class="display">
+                            <ul class="list-actions">
+                                <li><a href="/views/users/details.html" class="list-actions-button-details">Details</a></li>
+                                <li><a href="/views/users/edit.html" class="list-actions-button-edit">Edit</a></li>
+                                <li><a href="" class="list-actions-button-delete">Delete</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="display-small">
+                        <td colspan="2">
                             <ul class="list-actions">
                                 <li><a href="/views/users/details.html" class="list-actions-button-details">Details</a></li>
                                 <li><a href="/views/users/edit.html" class="list-actions-button-edit">Edit</a></li>
@@ -50,9 +59,18 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>me</td>
-                        <td>xxx@gmail.com</td>
-                        <td>
+                        <td>Martinx1998</td>
+                        <td>martin.monster01@gmail.com</td>
+                        <td class="display">
+                            <ul class="list-actions">
+                                <li><a href="/views/users/details.html" class="list-actions-button-details">Details</a></li>
+                                <li><a href="/views/users/edit.html" class="list-actions-button-edit">Edit</a></li>
+                                <li><a href="" class="list-actions-button-delete">Delete</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="display-small">
+                        <td colspan="2">
                             <ul class="list-actions">
                                 <li><a href="/views/users/details.html" class="list-actions-button-details">Details</a></li>
                                 <li><a href="/views/users/edit.html" class="list-actions-button-edit">Edit</a></li>
@@ -62,17 +80,25 @@
                     </tr>
                 </tbody>
             </table>
-            <p><a href="/views/users/add.html" class="button-add">Add new user</a></p>
+            <div class="form-buttons">
+                <a href="/views/users/add.html" class="button-add">Add new user</a>
+            </div>
         </section>
     </main>
     <footer>
         <div class="container">
             <div class="info">
-                <span>©goassign.me 2022</span>
-                <a>Terms & Privacy</a>
+                <div>
+                    <span>©goassign.me 2022</span>
+                </div>
+                <div>
+                    <a>Terms & Privacy</a>
+                </div>
             </div>
             <div class="info">
-                <span>David Wróbel - iamxdave</span>
+                <div>
+                    <span>David Wróbel - iamxdave</span>
+                </div>
                 <div>
                     <a href="https://www.github.com/iamxdave">
                         <img src="/images/icons/github.svg" alt="Github link">

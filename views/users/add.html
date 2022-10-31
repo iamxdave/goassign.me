@@ -30,33 +30,29 @@
         <section>           
             <h2>Add user</h2>
             <form action="" class="form">
-                <div>
-                    <label for="firstname">Username: <span class="symbol-required">*</span></label>
-                    <input type="text" name="username" id="username">
-                </div>
+                <label for="firstname">Username: <span class="symbol-required">*</span></label>
+                <input type="text" name="username" id="username">
                 <span id="errorUsername"></span>  
-                <div>
-                    <label for="email">Email: <span class="symbol-required">*</span></label>
-                    <input type="email" id="email">
-                </div>
+                
+                <label for="email">Email: <span class="symbol-required">*</span></label>
+                <input type="email" id="email">
                 <span id="errorEmail"></span>  
-                <div>
-                    <label for="email">Password: <span class="symbol-required">*</span></label>
-                    <input type="password" id="password">
-                </div>
+                
+                <label for="email">Password: <span class="symbol-required">*</span></label>
+                <input type="password" id="password">
                 <span id="errorPassword"></span> 
-                <div>
-                    <label for="firstname">Firstname: <span class="symbol-required">*</span></label>
-                    <input type="text" name="firstname" id="firstname">
-                </div>
+
+                <label for="firstname">Firstname: <span class="symbol-required">*</span></label>
+                <input type="text" name="firstname" id="firstname">
                 <span id="errorFirstname"></span>
-                <div>
-                    <label for="lastname">Lastname: <span class="symbol-required">*</span></label>
-                    <input type="text" id="lastname">
-                </div> 
+
+                <label for="lastname">Lastname: <span class="symbol-required">*</span></label>
+                <input type="text" id="lastname">
                 <span id="errorLastname"></span>  
+
+                <p id="errorSummary" class="errors-text hidden-error">Form contains errors</p>
+
                 <div class="form-buttons">
-                    <p id="errorSummary" class="errors-text"></p>
                     <input type="submit" value="Add" class="form-button-submit">
                     <a href="/views/users/" class="form-button-cancel">Decline</a>
                 </div>

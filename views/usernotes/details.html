@@ -28,33 +28,31 @@
     </header>
         <main>
             <section>
-            <h2>xxxs' permissions for the note</h2>
+            <h2>xxxs' permissions</h2>
             <form action="" class="form">
-                <div>
-                    <label for="user">User:</label>
-                    <input type="text" id="user" value="this user" disabled>
-                </div>
-                <p id="errorUser"></p>
-                <div>
-                    <label for="note">Note:</label>
-                    <input type="text" id="note" value="this note" disabled>
-                </div>
-                <p id="errorNote"></p>
+                
+                <label for="user">User:</label>
+                <input type="text" id="user" value="this user" disabled>
+                <span id="errorUser"></span>
+                
+                <label for="note">Note:</label>
+                <input type="text" id="note" value="this note" disabled>      
+                <span id="errorNote"></span>
+
                 <h4>Permissions</h4>
-                <div class="checkbox-permission">
-                    <label for="canWrite">Can write:</label>
-                    <input type="checkbox" id="canWrite" name="canWrite" value="permission" checked disabled>
-                </div>
+                
+                <label for="canWrite">Write:</label>
+                <input type="checkbox" id="canWrite" name="canWrite" value="permission" checked disabled>
                 <span id="errorWrite"></span> 
-                <div class="checkbox-permission">
-                    <label for="canDelete">Can delete:</label>
-                    <input type="checkbox" id="canDelete" name="canDelete" value="permission"  disabled>
-                </div>
+                
+                <label for="canDelete">Delete:</label>
+                <input type="checkbox" id="canDelete" name="canDelete" value="permission"  disabled>
                 <span id="errorDelete"></span>
+                
+                <p id="errorSummary" class="errors-text hidden-error">Form contains errors</p>
+
                 <div class="form-buttons">
-                    <p id="errorSummary" class="errors-text"></p>
-                    <input type="submit" value="Edit" class="form-button-submit">
-                    <a href="/views/usernotes/" class="form-button-cancel">Decline</a>
+                    <a href="/views/usernotes/" class="form-button-cancel">Back</a>
                 </div>
             </form>
         </section>

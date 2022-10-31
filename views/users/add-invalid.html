@@ -30,33 +30,30 @@
         <section>           
             <h2>Add user</h2>
             <form action="" class="form">
-                <div>
-                    <label for="firstname">Username: <span class="symbol-required">*</span></label>
-                    <input type="text" name="username" id="username" class="error-input">
-                </div>
+                <label for="firstname">Username: <span class="symbol-required">*</span></label>
+                <input type="text" name="username" id="username" class="error-input">
                 <span id="errorUsername" class="errors-text">Username is required</span>  
-                <div>
-                    <label for="email">Email: <span class="symbol-required">*</span></label>
-                    <input type="text" name="email" id="email" class="error-input">
-                </div>
-                <span id="errorEmail" class="errors-text">Email is required</span>  
-                <div>
-                    <label for="email">Password: <span class="symbol-required">*</span></label>
-                    <input type="password" name="email" id="password" class="error-input">
-                </div>
+
+                <label for="email">Email: <span class="symbol-required">*</span></label>
+                <input type="text" name="email" id="email" class="error-input">
+                <span id="errorEmail" class="errors-text">Email is required</span>
+                
+                <label for="email">Password: <span class="symbol-required">*</span></label>
+                <input type="password" name="email" id="password" class="error-input">
                 <span id="errorPassword" class="errors-text">Password is required</span> 
-                <div>
-                    <label for="firstname">Firstname: <span class="symbol-required">*</span></label>
-                    <input type="text" name="firstname" id="firstname" class="error-input">
-                </div>
+                
+                <label for="firstname">Firstname: <span class="symbol-required">*</span></label>
+                <input type="text" name="firstname" id="firstname" class="error-input">
                 <span id="errorFirstname" class="errors-text">Firstname is required</span>
-                <div>
-                    <label for="lastname">Lastname: <span class="symbol-required">*</span></label>
-                    <input type="text" name="lastname" id="lastname" class="error-input">
-                </div> 
-                <span id="errorLastname" class="errors-text">Lastname is required</span>  
+                
+                
+                <label for="lastname">Lastname: <span class="symbol-required">*</span></label>
+                <input type="text" name="lastname" id="lastname" class="error-input">
+                <span id="errorLastname" class="errors-text">Lastname is required</span> 
+                
+                <span id="errorSummary" class="errors-text">Form contains errors</span>
+
                 <div class="form-buttons">
-                    <p id="errorSummary" class="errors-text">Form contains errors</p>
                     <input type="submit" value="Add" class="form-button-submit">
                     <a href="/views/users/" class="form-button-cancel">Decline</a>
                 </div>
