@@ -385,11 +385,6 @@ textarea {
     max-width: calc(450px + 2rem);
 }
 
-.form-button-submit,
-.form-button-cancel {
-    width: 100%;
-}
-
 .button-add {
     width: inherit;
 }

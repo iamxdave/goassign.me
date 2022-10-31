@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/style.css">
     <title>Note</title>
 </head>
 <body>
@@ -12,7 +12,7 @@
         <div class="container">
             <div>              
                 <a href="/views/">
-                    <img src="/images/logo.gif" alt="Goassign.me logo" href="/views/" width="100%">
+                    <img src="/images/logo.gif" alt="Goassign.me logo" >
                 </a>
             </div>
             <div>
@@ -29,15 +29,17 @@
     <main>
         <section>
             <h2>Edit a note</h2>
-            <form action="" class="form form-larger">
+            <form class="form form-larger">
                 
                 <label for="title">Title: <span class="symbol-required">*</span></label>
                 <input type="text" name="title" id="title" value="this">
                 <span id="errorTitle"></span>
             
+                <label for="creation">Creation:</label>
+                <input type="date" name="creation" id="creation" value="2018-06-10" disabled>
+                
                 <label for="implementation">Implementation:</label>
-                <input type="date" name="date" id="date" value="2022-12-12">
-                <span id="errorDate"></span>
+                <input type="date" name="implementation" id="implementation" value="2018-06-12" disabled>
             
                 <label for="description">Description: <span class="symbol-required">*</span></label>
                 

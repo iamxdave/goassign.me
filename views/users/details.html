@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/style.css">
     <title>User</title>
 </head>
 <body>
@@ -12,7 +12,7 @@
         <div class="container">
             <div>              
                 <a href="/views/">
-                    <img src="/images/logo.gif" alt="Goassign.me logo" href="/views/" width="100%">
+                    <img src="/images/logo.gif" alt="Goassign.me logo" >
                 </a>
             </div>
             <div>
@@ -29,15 +29,15 @@
     <main>
         <section>
             <h2>Details of xxx user</h2>
-            <form action="" class="form">
+            <form class="form">
 
-                <label for="firstname">Username:</label>
+                <label for="username">Username:</label>
                 <input type="text" name="username" id="username" value="this" disabled>
                 
                 <label for="email">Email:</label>
                 <input type="text" value="this email" id="email" disabled>
 
-                <label for="email">Password:</label>
+                <label for="password">Password:</label>
                 <input type="password" placeholder="********" id="password" disabled>
 
                 <label for="firstname">Firstname:</label>
@@ -49,7 +49,7 @@
                 <p id="errorSummary" class="errors-text hidden-error">Form contains errors</p>
                 
                 <div class="form-buttons">
-                    <input type="submit" value="Edit" class="form-button-submit">
+                    <a href="/views/users/edit.html" class="form-button-submit">Edit</a>
                 </div>
             </form>
         </section>
@@ -76,10 +76,10 @@
                             <input type="text" name="date" id="date" value="dd.mm.rrrr" disabled>
                         </td>
                         <td class="table-checkbox">
-                            <input type="checkbox" id="canWrite" name="canWrite" value="permission" checked disabled>
+                            <input type="checkbox" id="write" name="canWrite" value="permission" checked disabled>
                         </td>
                         <td class="table-checkbox">
-                            <input type="checkbox" id="canDelete" name="canDelete" value="permission" disabled>
+                            <input type="checkbox" id="delete" name="canDelete" value="permission" disabled>
                         </td>
                     </tr> 
                 </tbody>
