@@ -279,20 +279,33 @@ a, a:hover, button, button:hover, input, input:hover {
     background-image: linear-gradient(to right, #c0392b, #e74c3c, #7209b7);
 }
 
-.btn-style {
-    color: black;
+.btn-style, .btn-style-selected {
     padding: 1rem 2.4rem;
     border: 1px solid #3a0ca3;
     border-radius: 25px;
     box-shadow: 0 4px 15px 0 rgba(55, 80, 85, 0.25);
 }
 
+.btn-style {
+    color: black;
+}
+
 .btn-style:focus {
     outline: none;
 }
 
-.btn-style:hover, .main-divider {
+.btn-style:hover, .main-divider, .btn-style-selected:hover {
     box-shadow: 0 4px 15px 0 rgba(110, 80, 170, 0.75);
+}
+
+.btn-style-selected {
+    background-image: linear-gradient(to right, #4910CE, #5A0FD3, #8D0BE4);
+    border: 1px solid #4910CE;
+    color: white;
+}
+
+.btn-style-selected:hover {
+    background-image: linear-gradient(to right, #3a0ca3, #480ca8, #7209b7);
 }
 
 .btn-style:hover {
@@ -441,6 +454,7 @@ textarea {
 }
 
 .form input.error-input,
+.form textarea.error-input,
 .form select.error-input {
     border: 3px solid #e74c3c;
 }
