@@ -314,6 +314,7 @@ a, a:hover, button, button:hover, input, input:hover {
 }
 
 .btn-style,
+.btn-style-selected,
 .button-add,
 .list-actions-button-details,
 .list-actions-button-edit,
@@ -324,6 +325,7 @@ a, a:hover, button, button:hover, input, input:hover {
 }
 
 .btn-style:hover,
+.btn-style-selected:hover,
 .button-add:hover,
 .list-actions-button-details:hover,
 .list-actions-button-edit:hover,
@@ -387,7 +389,7 @@ textarea {
 .form input[type="datetime-local"],
 .form input[type="email"],
 .form textarea {
-    border: 1px solid #8c7f8d;
+    border: 2px solid #8c7f8d;
     color: #3d2c50;
     border-radius: 5px;
     padding: 0.5rem;
@@ -456,7 +458,7 @@ textarea {
 .form input.error-input,
 .form textarea.error-input,
 .form select.error-input {
-    border: 3px solid #e74c3c;
+    border: 2px solid #e74c3c;
 }
 
 .errors-text {
@@ -631,7 +633,8 @@ color: black;
     nav ul li a{
         display: block;
     }
-    nav ul li a.btn-style {
+    nav ul li a.btn-style,
+    nav ul li  a.btn-style-selected {
         padding: 0.5rem 3rem;
         margin: 0.5rem;
     }

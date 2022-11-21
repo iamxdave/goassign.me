@@ -19,7 +19,7 @@
                 <nav>
                     <ul>
                         <li><a href="/views/users/" class="btn-style">Users</a></li>
-                        <li><a href="/views/usernotes/" class="btn-style">Usernotes</a></li>
+                        <li><a href="/views/usernotes/" class="btn-style-selected">Usernotes</a></li>
                         <li><a href="/views/notes/" class="btn-style">Notes</a></li>
                     </ul>
                 </nav>
@@ -34,38 +34,34 @@
                     Successfully added usernote
                 </div>  
                 <h2>Add user permissions</h2>
-                <form class="form">
+                <form class="form" novalidate onsubmit="return validateForm();">
                     
                     <label for="user">User: <span class="symbol-required">*</span></label>
                     <select name="user" id="user">
-                        <option>-- Select a user --</option>
+                        <option value="default">-- Select user --</option>
                         <option value="1">user1</option>
                         <option value="2">user2</option>
                         <option value="3">user3</option>
                     </select>
-                    <span id="errorUser"></span>
+                    <span id="errorUser" class="errors-text"></span>
                     
                     <label for="note">Note: <span class="symbol-required">*</span></label>
                     <select name="note" id="note">
-                        <option>-- Select a note --</option>
+                        <option value="default">-- Select note --</option>
                         <option value="1">note1</option>
                         <option value="2">note2</option>
                         <option value="3">note3</option>
                     </select>
                     
-                    <span id="errorNote"></span>
+                    <span id="errorNote" class="errors-text"></span>
                     
                     <h4>Permissions</h4>
                     
                     <label for="write">Can write:</label>
                     <input type="checkbox" id="write" name="canWrite" value="permission">
                     
-                    <span id="errorWrite"></span> 
-                    
                     <label for="delete">Can delete:</label>
                     <input type="checkbox" id="delete" name="canDelete" value="permission">
-                    
-                    <span id="errorDelete"></span>
 
                     <p id="errorSummary" class="errors-text hidden-error">Form contains errors</p>
 
@@ -96,5 +92,7 @@
             </div>
         </div>
     </footer>
+    <script type="application/javascript" src="/js/validationCommon.js"></script>
+    <script type="application/javascript" src="/js/validationFormUsernotes.js"></script>
 </body>
 </html>

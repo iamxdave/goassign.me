@@ -18,7 +18,7 @@
             <div>
                 <nav>
                     <ul>
-                        <li><a href="/views/users/" class="btn-style">Users</a></li>
+                        <li><a href="/views/users/" class="btn-style-selected">Users</a></li>
                         <li><a href="/views/usernotes/" class="btn-style">Usernotes</a></li>
                         <li><a href="/views/notes/" class="btn-style">Notes</a></li>
                     </ul>
@@ -34,27 +34,27 @@
                     Successfully edited user
                 </div> 
                 <h2>Edit user</h2>
-                <form class="form">
+                <form class="form" novalidate onsubmit="return validateForm();">
 
                     <label for="username">Username: <span class="symbol-required">*</span></label>
                     <input type="text" name="username" id="username" value="this">
-                    <span id="errorUsername"></span>  
+                    <span id="errorUsername" class="errors-text"></span>  
 
                     <label for="email">Email: <span class="symbol-required">*</span></label>
                     <input type="text" value="this email" id="email">
-                    <span id="errorEmail"></span>  
+                    <span id="errorEmail" class="errors-text"></span>  
 
                     <label for="password">Password: <span class="symbol-required">*</span></label>
                     <input type="password" placeholder="********" id="password">
-                    <span id="errorPassword"></span> 
+                    <span id="errorPassword" class="errors-text"></span> 
 
                     <label for="firstname">Firstname: <span class="symbol-required">*</span></label>
                     <input type="text" value="this firstname" id="firstname">
-                    <span id="errorFirstname"></span>
+                    <span id="errorFirstname" class="errors-text"></span>
 
                     <label for="lastname">Lastname: <span class="symbol-required">*</span></label>
                     <input type="text" id="lastname" value="this lastname">
-                    <span id="errorLastname"></span>  
+                    <span id="errorLastname" class="errors-text"></span>  
                     
                     <p id="errorSummary" class="errors-text hidden-error">Form contains errors</p>
                     
@@ -85,5 +85,7 @@
             </div>
         </div>
     </footer>
+    <script type="application/javascript" src="/js/validationCommon.js"></script>
+    <script type="application/javascript" src="/js/validationFormUsers.js"></script>
 </body>
 </html>
