@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>User</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div>              
+                <a href="/views/">
+                    <img src="/images/logo.gif" alt="Goassign.me logo" >
+                </a>
+            </div>
+            <div>
+                <nav>
+                    <ul>
+                        <li><a href="/views/users/" class="btn-style">Users</a></li>
+                        <li><a href="/views/usernotes/" class="btn-style-selected">Usernotes</a></li>
+                        <li><a href="/views/notes/" class="btn-style">Notes</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+        <main>
+            <div class="main-divider">
+                <section>
+                <h2>xxxs' permissions</h2>
+                <form class="form">
+                    
+                    <label for="user">User:</label>
+                    <input type="text" id="user" value="this user" disabled>
+                    <span id="errorUser"></span>
+                    
+                    <label for="note">Note:</label>
+                    <input type="text" id="note" value="this note" disabled>      
+                    <span id="errorNote"></span>
+
+                    <h4>Permissions</h4>
+                    
+                    <label for="write">Write:</label>
+                    <input type="checkbox" id="write" name="canWrite" value="permission" checked disabled>
+                    <span id="errorWrite"></span> 
+                    
+                    <label for="delete">Delete:</label>
+                    <input type="checkbox" id="delete" name="canDelete" value="permission"  disabled>
+                    <span id="errorDelete"></span>
+                    
+                    <p id="errorSummary" class="errors-text hidden-error">Form contains errors</p>
+
+                    <div class="form-buttons">
+                        <a href="/views/usernotes/edit.html" class="form-button-submit">Edit</a>
+                        <a href="/views/usernotes/" class="form-button-cancel">Back</a>
+                    </div>
+                </form>
+            </section>
+            </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="info">
+                <span>©goassign.me 2022</span>
+                <a>Terms & Privacy</a>
+            </div>
+            <div class="info">
+                <span>David Wróbel - iamxdave</span>
+                <div>
+                    <a href="https://www.github.com/iamxdave">
+                        <img src="/images/icons/github.svg" alt="Github link">
+                    </a>
+                    <a href="https://www.linkedin.com/in/iamxdave">
+                        <img src="/images/icons/linkedin.svg" alt="Linkedin link">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
