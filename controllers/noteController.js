@@ -1,11 +1,15 @@
 exports.showNotes = (req, res, next) => {
-    res.render('pages/users/list');
+    res.render('pages/notes/list', { navLocation: 'note' });
 }
 
-exports.showNotes = (req, res, next) => {
-    res.render('pages/users/list');
+exports.showNoteAdd = (req, res, next) => {
+    res.render('pages/notes/add', { navLocation: 'note' });
 }
 
-exports.showNotes = (req, res, next) => {
-    res.render('pages/users/list');
+exports.showNoteEdit = (req, res, next) => {
+    res.render('pages/notes/edit', { navLocation: 'note' });
+}
+
+exports.showNoteDetails = (req, res, next) => {
+    res.render('pages/notes/details', { navLocation: 'note' });
 }

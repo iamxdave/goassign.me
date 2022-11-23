@@ -1,18 +1,28 @@
-<header>
-    <div class="container">
-        <div>              
-            <a href="/views/">
-                <img src="/images/logo.gif" alt="Goassign.me logo" >
-            </a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Note</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div>              
+                <a href="/">
+                    <img src="/images/logo.gif" alt="Goassign.me logo" >
+                </a>
+            </div>
+            <div>
+                <nav>
+                    <ul>
+                        <li><a href="/users" class="<%= navLocation == 'user' ? 'btn-style-selected' : 'btn-style'%>">Users</a></li>
+                        <li><a href="/usernotes" class="<%= navLocation == 'usernote' ? 'btn-style-selected' : 'btn-style'%>">Usernotes</a></li>
+                        <li><a href="/notes" class="<%= navLocation == 'note' ? 'btn-style-selected' : 'btn-style'%>">Notes</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-        <div>
-            <nav>
-                <ul>
-                    <li><a href="/views/users/" class="btn-style">Users</a></li>
-                    <li><a href="/views/usernotes/" class="btn-style">Usernotes</a></li>
-                    <li><a href="/views/notes/" class="btn-style-selected">Notes</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-</header>
+    </header>

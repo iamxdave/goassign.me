@@ -1,31 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>User</title>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div>              
-                <a href="/views/">
-                    <img src="/images/logo.gif" alt="Goassign.me logo" >
-                </a>
-            </div>
-            <div>
-                <nav>
-                    <ul>
-                        <li><a href="/views/users/" class="btn-style-selected">Users</a></li>
-                        <li><a href="/views/usernotes/" class="btn-style">Usernotes</a></li>
-                        <li><a href="/views/notes/" class="btn-style">Notes</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
+<%- include('../../partials/header') %>
     <main>
         <div class="main-divider">
             <section>
@@ -50,7 +23,7 @@
                     <p id="errorSummary" class="errors-text hidden-error">Form contains errors</p>
                     
                     <div class="form-buttons">
-                        <a href="/views/users/edit.html" class="form-button-submit">Edit</a>
+                        <a href="edit" class="form-button-submit">Edit</a>
                     </div>
                 </form>
             </section>
@@ -88,29 +61,9 @@
                     </tbody>
                 </table>
                 <div class="form-buttons">
-                    <a href="/views/users/" class="form-button-cancel">Back</a>
+                    <a href="/users" class="form-button-cancel">Back</a>
                 </div>
             </section>
         </div>
     </main>
-    <footer>
-        <div class="container">
-            <div class="info">
-                <span>©goassign.me 2022</span>
-                <a>Terms & Privacy</a>
-            </div>
-            <div class="info">
-                <span>David Wróbel - iamxdave</span>
-                <div>
-                    <a href="https://www.github.com/iamxdave">
-                        <img src="/images/icons/github.svg" alt="Github link">
-                    </a>
-                    <a href="https://www.linkedin.com/in/iamxdave">
-                        <img src="/images/icons/linkedin.svg" alt="Linkedin link">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+<%- include('../../partials/footer') %>

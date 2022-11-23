@@ -7,16 +7,16 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(__dirname + '/public'));
 
 
-const userRouter = require("./routes/user");
-const noteRouter = require("./routes/note");
-const usernoteRouter = require("./routes/usernote");
+const userRouter = require("./routes/usersRouter");
+const noteRouter = require("./routes/notesRouter");
+const usernoteRouter = require("./routes/usernotesRouter");
 
-app.use(userRouter);
-app.use(noteRouter);
-app.use(usernoteRouter);
+app.use('/users', userRouter);
+app.use('/notes', noteRouter);
+app.use('/usernotes', usernoteRouter);
 
 app.get('/', (req, res) => {
-    res.render('index', {});
+    res.render('index', { navLocation: '' });
 });
 
 app.listen(3000, () => {
