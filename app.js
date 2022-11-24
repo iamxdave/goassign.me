@@ -2,6 +2,10 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
+require('dotenv').config();
+
+const PORT = process.env.PORT || 3000;
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(__dirname + '/public'));
@@ -19,6 +23,6 @@ app.get('/', (req, res) => {
     res.render('index', { navLocation: '' });
 });
 
-app.listen(3000, () => {
-    console.log('Server listening on port 3000')
+app.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}`)
 });
