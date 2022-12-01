@@ -23,7 +23,7 @@ function validateForm() {
             valid = false;
             passwordInput.classList.add("error-input");
             passwordError.innerText = "Field is required";
-        } else if(!checkTextLengthRange(passwordInput.value), 5, 60) {
+        } else if(!checkTextLengthRange(passwordInput.value, 5, 60)) {
             valid = false;
             passwordInput.classList.add("error-input");
             passwordError.innerText = "Field should contain 5-30 characters";
@@ -36,7 +36,7 @@ function validateForm() {
         valid = false;
         usernameInput.classList.add("error-input");
         usernameError.innerText = "Field is required";
-    } else if(!checkTextLengthRange(usernameInput.value), 5, 60) {
+    } else if(!checkTextLengthRange(usernameInput.value, 5, 60)) {
         valid = false;
         usernameInput.classList.add("error-input");
         usernameError.innerText = "Field should contain 5-30 characters";
@@ -46,7 +46,7 @@ function validateForm() {
         valid = false;
         emailInput.classList.add("error-input");
         emailError.innerText = "Field is required";
-    } else if(!checkTextLengthRange(emailInput.value), 5, 60) {
+    } else if(!checkTextLengthRange(emailInput.value, 5, 60)) {
         valid = false;
         emailInput.classList.add("error-input");
         emailError.innerText = "Field should contain 5-30 characters";
@@ -60,7 +60,7 @@ function validateForm() {
         valid = false;
         firstnameInput.classList.add("error-input");
         firstnameError.innerText = "Field is required";
-    } else if(!checkTextLengthRange(firstnameInput.value), 5, 60) {
+    } else if(!checkTextLengthRange(firstnameInput.value, 5, 60)) {
         valid = false;
         firstnameInput.classList.add("error-input");
         firstnameError.innerText = "Field should contain 5-30 characters";
@@ -70,7 +70,7 @@ function validateForm() {
         valid = false;
         lastnameInput.classList.add("error-input");
         lastnameError.innerText = "Field is required";
-    } else if(!checkTextLengthRange(lastnameInput.value), 5, 60) {
+    } else if(!checkTextLengthRange(lastnameInput.value, 5, 60)) {
         valid = false;
         lastnameInput.classList.add("error-input");
         lastnameError.innerText = "Field should contain 5-30 characters";

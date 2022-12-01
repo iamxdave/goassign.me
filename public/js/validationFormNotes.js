@@ -14,7 +14,7 @@ function validateForm() {
         valid = false;
         titleInput.classList.add("error-input");
         titleError.innerText = "Field is required";
-    } else if(!checkTextLengthRange(titleInput.value), 5, 80) {
+    } else if(!checkTextLengthRange(titleInput.value, 5, 80)) {
         valid = false;
         titleInput.classList.add("error-input");
         titleError.innerText = "Field should contain 5-80 characters";
@@ -24,7 +24,7 @@ function validateForm() {
         valid = false;
         descriptionInput.classList.add("error-input");
         descriptionError.innerText = "Field is required";
-    } else if(!checkTextLengthRange(descriptionInput.value), 5, 400) {
+    } else if(!checkTextLengthRange(descriptionInput.value, 5, 400)) {
         valid = false;
         descriptionInput.classList.add("error-input");
         descriptionError.innerText = "Field should contain 5-400 characters";

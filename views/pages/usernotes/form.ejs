@@ -1,0 +1,64 @@
+<%- include('../../partials/header') %>
+    <main>
+        <div class="main-divider">
+            <section>
+                <div class="alert">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    Successfully added usernote
+                </div>  
+                <h2><%= title %></h2>
+                <form class="form" method="post" action="<%= action %>" novalidate onsubmit="return validateForm();">
+                    <input type="hidden" name="_id" value="<%= usernote._id %>">
+
+                    <label for="user">User: <span class="symbol-required">*</span></label>
+                    <select name="user" id="user" required <%= (mode == 'details')? 'disabled' : '' %>>
+                        <option value="default">-- Select user --</option>
+                        <% for (let u of allUsers) { %>
+                            <option value="<%= u._id %>" label="<%= u.username %>"
+                                <%= (usernote._id && u._id.toString() == usernote.user._id.toString())? 'selected' : ''%>></option>
+                        <% } %>
+                    </select>
+                    <span id="errorUser" class="errors-text"></span>
+                    
+                    <label for="note">Note: <span class="symbol-required">*</span></label>
+                    <select name="note" id="note" required <%= (mode == 'details')? 'disabled' : '' %>>
+                        <option value="default">-- Select note --</option>
+                        <% for (let n of allNotes) { %>
+                            <option value="<%= n._id %>" label="<%= n.title %>"
+                                <%= (usernote._id && n._id.toString() == usernote.note._id.toString())? 'selected' : ''%>></option>
+                        <% } %>
+                    </select>
+                    
+                    <span id="errorNote" class="errors-text"></span>
+                    
+                    <h4>Permissions</h4>
+                    
+                    <label for="write">Can write:</label>
+                    <input type="checkbox" id="write" name="write" <%= (usernote.write == true)? 'checked' : ''%> <%= (mode == 'details')? 'disabled' : ''%>>
+                    
+                    <label for="delete">Can delete:</label>
+                    <input type="checkbox" id="delete" name="delete" <%= (usernote.delete == true)? 'checked' : ''%> <%= (mode == 'details')? 'disabled' : ''%>>
+
+                    <p id="errorSummary" class="errors-text hidden-error">Form contains errors</p>
+
+                    <div class="form-buttons">
+                        <% if (mode == 'details') { %>
+                            <a href="/usernotes/edit/<%= usernote._id %>" class="form-button-submit">Edit</a>
+                            <a href="/usernotes" class="form-button-cancel">Back</a>
+                        <% } %>
+                        <% if (mode == 'edit') { %>
+                            <input type="submit" value="<%= btn %>" class="form-button-submit">
+                            <a href="/usernotes" class="form-button-cancel">Back</a>
+                        <% } %>
+                        <% if (mode == 'create') { %> 
+                            <input type="submit" value="<%= btn %>" class="form-button-submit">
+                            <a href="/usernotes" class="form-button-cancel">Decline</a>
+                        <% } %>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+    <script type="application/javascript" src="/js/validationCommon.js"></script>
+    <script type="application/javascript" src="/js/validationFormUsernotes.js"></script>
+<%- include('../../partials/footer') %>

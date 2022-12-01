@@ -1,0 +1,90 @@
+<%- include('../../partials/header') %>
+    <main>
+        <div class="main-divider">
+            <section> 
+                <div class="alert">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    Successfully added user
+                </div>          
+                <h2><%= title %></h2>
+                <form class="form" method="post" action="<%= action %>" novalidate onsubmit="return validateForm();">
+                    <input type="hidden" name="_id" value="<%= user._id %>">
+
+                    <label for="username">Username: <span class="symbol-required">*</span></label>
+                    <input type="text" name="username" id="username" value="<%= user.username %>" <%= (mode == 'details')? 'disabled' : '' %>>
+                    <span id="errorUsername" class="errors-text"></span>  
+                    
+                    <label for="email">Email: <span class="symbol-required">*</span></label>
+                    <input type="email" name="email" id="email" value="<%= user.email %>" <%= (mode == 'details')? 'disabled' : '' %>>
+                    <span id="errorEmail" class="errors-text"></span>  
+                    
+                    <label for="password">Password: <span class="symbol-required">*</span></label>
+                    <input type="password" name="password" id="password" <%= (mode == 'details')? 'disabled' : '' %>>
+                    <span id="errorPassword" class="errors-text"></span> 
+
+                    <label for="firstname">Firstname: <span class="symbol-required">*</span></label>
+                    <input type="text" name="firstname" id="firstname" value="<%= user.firstname %>" <%= (mode == 'details')? 'disabled' : '' %>>
+                    <span id="errorFirstname" class="errors-text"></span>
+
+                    <label for="lastname">Lastname: <span class="symbol-required">*</span></label>
+                    <input type="text" name="lastname" id="lastname" value="<%= user.lastname %>" <%= (mode == 'details')? 'disabled' : '' %>>
+                    <span id="errorLastname" class="errors-text"></span>  
+
+                    <p id="errorSummary" class="errors-text hidden-error">Form contains errors</p>
+
+                    <div class="form-buttons">
+                        <% if (mode == 'details') { %>
+                            <a href="/users/edit/<%= user._id %>" class="form-button-submit">Edit</a>
+                        <% } %>
+                        <% if (mode == 'edit') { %>
+                            <input type="submit" value="<%= btn %>" class="form-button-submit">
+                        <% } %>
+                        <% if (mode == 'create') { %> 
+                            <input type="submit" value="<%= btn %>" class="form-button-submit">
+                            <a href="/users" class="form-button-cancel">Decline</a>
+                        <% } %>
+                    </div>
+                </form>
+            </section>
+        </div>
+        <% if (mode == 'details' || mode == 'edit') { %>
+            <div class="main-divider">
+                <section>
+                    <h2>User permissions for the notes</h2>
+                    <table class="table-list table-permission">
+                        <thead>
+                            <tr>
+                                <th rowspan="2">Note title</th>
+                                <th rowspan="2">Implementation</th>
+                                <th colspan="2">Permissions</th>
+                            </tr>
+                            <tr>
+                                <th>Write</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for (let un of user.usernotes) { %> 
+                                <tr>
+                                    <td><a href="/notes/details/<%= un.note._id %>"></a><%= un.note.title %></td>
+                                    <td class="display"><%= un.note.implementation %></td>
+                                    <td class="table-checkbox">
+                                        <input type="checkbox" id="write" name="write" value="permission" <%= (un.write == 'true')? 'checked' : '' %> disabled>
+                                    </td>
+                                    <td class="table-checkbox">
+                                        <input type="checkbox" id="delete" name="delete" value="permission" <%= (un.delete == 'true')? 'checked' : '' %> disabled>
+                                    </td>
+                                </tr>
+                            <% } %>
+                        </tbody>
+                    </table>       
+                    <div class="form-buttons">
+                        <a href="/users" class="form-button-cancel">Back</a>
+                    </div>
+                </section>
+            </div>
+        <% } %>
+    </main>
+    <script type="application/javascript" src="/js/validationCommon.js"></script>
+    <script type="application/javascript" src="/js/validationFormUsers.js"></script>
+<%- include('../../partials/footer') %>
