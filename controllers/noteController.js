@@ -6,6 +6,17 @@ exports.addNote = (req, res, next) => {
     NoteRepository.createNote(data)
         .then(result => {
             res.redirect('/notes');
+        })
+        .catch(err => {
+            res.render('pages/notes/form', {
+                note: { creation: convertDate() },
+                title: 'New note',
+                mode: 'create',
+                btn: 'Add',
+                action: '/notes/add',
+                navLocation: 'Note',
+                errors: err.details
+            });
         });
 };
 
@@ -38,7 +49,8 @@ exports.showNoteAdd = (req, res, next) => {
         mode: 'create',
         btn: 'Add',
         action: '/notes/add',
-        navLocation: 'Note' 
+        navLocation: 'Note',
+        errors: {} 
     });
 }
 

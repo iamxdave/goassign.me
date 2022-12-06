@@ -29,10 +29,10 @@
                                     <td><%= usernote.user.username %></td>
                                     <td><div class="note-title"><%= usernote.note.title %></div></td>
                                     <td class="table-checkbox">
-                                        <input type="checkbox" id="write" name="canWrite" value="permission" <%= (usernote.write == true)? "checked" : "" %> disabled>
+                                        <input type="checkbox" id="write" name="canWrite" value=<%= (usernote.write == true)? 'true' : 'false'%> <%= (usernote.write == true)? "checked" : "" %> disabled>
                                     </td>
                                     <td class="table-checkbox">
-                                        <input type="checkbox" id="delete" name="canDelete" value="permission" <%= (usernote.delete == true)? "checked" : "" %> disabled>
+                                        <input type="checkbox" id="delete" name="canDelete" value=<%= (usernote.delete == true)? 'true' : 'false'%> <%= (usernote.delete == true)? "checked" : "" %> disabled>
                                     </td>
                                     <td class="display">
                                         <ul class="list-actions">

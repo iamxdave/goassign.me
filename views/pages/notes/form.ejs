@@ -11,8 +11,12 @@
                     <input type="hidden" name="_id" value="<%= note._id %>"> 
                     
                     <label for="title">Title: <span class="symbol-required">*</span></label>
-                    <input type="text" name="title" id="title" value="<%= note.title %>" <%= (mode == 'details')? 'disabled' : '' %>>
-                    <span id="errorTitle" class="errors-text"></span>
+                    <input type="text" name="title" id="title" value="<%= note.title %>" <%= (mode == 'details')? 'disabled' : '' %> class=<%(errors.find(e => e.path.includes('title')))? 'error-input' : '' %>>
+                    <span id="errorTitle" class="errors-text">
+                        <% if (errors.find(e => e.path.includes('title'))) { %>
+                            <%= errors.find(e => e.path.includes('title')).message %>
+                        <% } %>
+                    </span>
                 
                     <label for="creation">Creation:</label>
                     <input type="date" name="creation" id="creation" value="<%= note.creation %>" disabled>

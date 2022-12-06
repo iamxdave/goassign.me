@@ -44,10 +44,3 @@ document.addEventListener('DOMContentLoaded', () => {
     implementationInput.valueAsDate = new Date();
     implementationInput.setAttribute("min", implementationInput.value);
 }, false);
-
-// const form = document.querySelector("#form");
-
-// form.addEventListener('submit', (e) => {
-//     e.preventDefault();
-//     validateForm();
-// }, false)

@@ -29,16 +29,26 @@ exports.getUsernoteById = (id) => {
     });
 };
 
-exports.createUsernote = (body) => {
-    return Usernote.create({
-        user_id: body.user_id,
-        note_id: body.note_id,
-        write: body.write,
-        delete: body.delete
+
+exports.createUsernote = async (body) => {
+    const usernote = await Usernote.findOne({where: { user_id: body.user, note_id: body.note } });
+
+    if(usernote != null)
+        return this.updateUsernote(usernote.dataValues._id, body);
+
+    return await Usernote.create({
+        user_id: body.user,
+        note_id: body.note,
+        write: (body.write == 'on')? 'true' : 'false',
+        delete: (body.delete == 'on')? 'true' : 'false'
     });
 };
 
 exports.updateUsernote = (id, body) => {
+    body._id = id;
+    body.write = (body.write == 'on')? 'true' : 'false';
+    body.delete = (body.delete == 'on')? 'true' : 'false';
+
     return Usernote.update(body, {where: {_id: id}});
 };
 
