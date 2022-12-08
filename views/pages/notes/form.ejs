@@ -7,11 +7,11 @@
                     Successfully added note
                 </div> 
                 <h2><%= title %></h2>
-                <form class="form form-larger" method="post" action="<%= action %>" novalidate onsubmit="return validateForm();">
+                <form class="form form-larger" method="post" action="<%= action %>" novalidate onsubmit="">
                     <input type="hidden" name="_id" value="<%= note._id %>"> 
                     
                     <label for="title">Title: <span class="symbol-required">*</span></label>
-                    <input type="text" name="title" id="title" value="<%= note.title %>" <%= (mode == 'details')? 'disabled' : '' %> class=<%(errors.find(e => e.path.includes('title')))? 'error-input' : '' %>>
+                    <input type="text" name="title" id="title" value="<%= note.title %>" <%= (mode == 'details')? 'disabled' : '' %> class="<%=(errors.find(e => e.path.includes('title')))? 'error-input' : '' %>">
                     <span id="errorTitle" class="errors-text">
                         <% if (errors.find(e => e.path.includes('title'))) { %>
                             <%= errors.find(e => e.path.includes('title')).message %>
@@ -25,10 +25,13 @@
                     <input type="date" name="implementation" id="implementation"  value="<%= note.creation %>" <%= (mode == 'details')? 'disabled' : '' %>>
                 
                     <label for="description">Description: <span class="symbol-required">*</span></label>
-                    <textarea name="description" id="description" cols="30" rows="10" <%= (mode == 'details')? 'disabled' : '' %>><%= note.description %></textarea>
-                    <span id="errorDescription" class="errors-text"></span>
-                    
-                    <p id="errorSummary" class="errors-text hidden-error">Form contains errors</p>
+                    <textarea name="description" id="description" cols="30" rows="10" <%= (mode == 'details')? 'disabled' : '' %> class="<%=(errors.find(e => e.path.includes('description')))? 'error-input' : '' %>"><%= note.description %></textarea>
+                    <span id="errorDescription" class="errors-text">
+                        <% if (errors.find(e => e.path.includes('description'))) { %>
+                            <%= errors.find(e => e.path.includes('description')).message %>
+                        <% } %>
+                    </span>
+                    <p id="errorSummary" class="errors-text <%=(errors.find(e => e))? '' : 'hidden-error' %>">Form contains errors</p>
                     
                     <div class="form-buttons">
                         <% if (mode == 'details') { %>

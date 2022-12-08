@@ -19,10 +19,20 @@ const Usernote = sequelize.define('Usernote', {
     user_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        validate: {
+            notEmpty: {
+                msg: "User is required"
+            }
+        }
     },
     note_id: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
+        validate: {
+            notEmpty: {
+                msg: "Note is required"
+            }
+        }
     },
 });
 

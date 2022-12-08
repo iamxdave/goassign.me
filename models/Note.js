@@ -11,6 +11,15 @@ const Note = sequelize.define('Note', {
     title: {
         type: Sequelize.STRING,
         allowNull: false,
+        validate: {
+            notEmpty: {
+                msg: "Title is required"
+            },
+            len: {
+                args: [5,80],
+                msg: "Title should contain 5-80 characters"
+            }
+        }
     },
     creation: {
         type: Sequelize.DATEONLY,
@@ -22,7 +31,16 @@ const Note = sequelize.define('Note', {
     },
     description: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
+        validate: {
+            notEmpty: {
+                msg: "Description is required"
+            },
+            len: {
+                args: [5,400],
+                msg: "Description should contain 5-400 characters"
+            }
+        }
     },
 });
 

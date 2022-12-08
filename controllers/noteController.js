@@ -4,9 +4,7 @@ const convertDate = require('../utils/convertDate');
 exports.addNote = (req, res, next) => {
     const data = { ...req.body };
     NoteRepository.createNote(data)
-        .then(result => {
-            res.redirect('/notes');
-        })
+        .then(result => res.redirect('/notes'))
         .catch(err => {
             res.render('pages/notes/form', {
                 note: { creation: convertDate() },
@@ -15,7 +13,7 @@ exports.addNote = (req, res, next) => {
                 btn: 'Add',
                 action: '/notes/add',
                 navLocation: 'Note',
-                errors: err.details
+                errors: err.errors
             });
         });
 };
@@ -24,6 +22,20 @@ exports.updateNote = (req, res, next) => {
     const data = { ...req.body };
     NoteRepository.updateNote(data._id, data)
         .then(result => res.redirect('/notes'))
+        .catch(err => {
+            NoteRepository.getNoteById(data._id)
+            .then(note => {
+                res.render('pages/notes/form', { 
+                    note: note,
+                    title: 'Edit note',
+                    mode: 'edit',
+                    btn: 'Confirm',
+                    action: '/notes/edit',
+                    navLocation: 'Note',
+                    errors: err.errors
+                });
+            })
+        });
 };
 
 exports.deleteNote = (req, res, next) => {
@@ -50,7 +62,7 @@ exports.showNoteAdd = (req, res, next) => {
         btn: 'Add',
         action: '/notes/add',
         navLocation: 'Note',
-        errors: {} 
+        errors: []
     });
 }
 
@@ -63,7 +75,8 @@ exports.showNoteEdit = (req, res, next) => {
             mode: 'edit',
             btn: 'Confirm',
             action: '/notes/edit',
-            navLocation: 'Note' 
+            navLocation: 'Note',
+            errors: []
         });
     })
 }

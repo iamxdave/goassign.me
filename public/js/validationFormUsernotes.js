@@ -13,13 +13,13 @@ function validateForm() {
     if(!checkRequired(userInput.value) || userInput.value == "default") {
         valid = false;
         userInput.classList.add("error-input");
-        userError.innerText = "Field is required";
+        userError.innerText = "User is required";
     }
 
     if(!checkRequired(noteInput.value) || noteInput.value == "default") {
         valid = false;
         noteInput.classList.add("error-input");
-        noteError.innerText = "Field is required";
+        noteError.innerText = "Note is required";
     }
 
     if(!valid) {

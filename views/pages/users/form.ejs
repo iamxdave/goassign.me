@@ -7,30 +7,50 @@
                     Successfully added user
                 </div>          
                 <h2><%= title %></h2>
-                <form class="form" method="post" action="<%= action %>" novalidate onsubmit="return validateForm();">
+                <form class="form" method="post" action="<%= action %>" novalidate>
                     <input type="hidden" name="_id" value="<%= user._id %>">
 
                     <label for="username">Username: <span class="symbol-required">*</span></label>
-                    <input type="text" name="username" id="username" value="<%= user.username %>" <%= (mode == 'details')? 'disabled' : '' %>>
-                    <span id="errorUsername" class="errors-text"></span>  
+                    <input type="text" name="username" id="username" value="<%= user.username %>" <%= (mode == 'details')? 'disabled' : '' %> class="<%=(errors.find(e => e.path.includes('username')))? 'error-input' : '' %>">
+                    <span id="errorUsername" class="errors-text">
+                        <% if (errors.find(e => e.path.includes('username'))) { %>
+                            <%= errors.find(e => e.path.includes('username')).message %>
+                        <% } %>
+                    </span> 
                     
                     <label for="email">Email: <span class="symbol-required">*</span></label>
-                    <input type="email" name="email" id="email" value="<%= user.email %>" <%= (mode == 'details')? 'disabled' : '' %>>
-                    <span id="errorEmail" class="errors-text"></span>  
+                    <input type="email" name="email" id="email" value="<%= user.email %>" <%= (mode == 'details')? 'disabled' : '' %> class="<%=(errors.find(e => e.path.includes('email')))? 'error-input' : '' %>">
+                    <span id="errorEmail" class="errors-text">
+                        <% if (errors.find(e => e.path.includes('email'))) { %>
+                            <%= errors.find(e => e.path.includes('email')).message %>
+                        <% } %>
+                    </span> 
                     
                     <label for="password">Password: <span class="symbol-required">*</span></label>
-                    <input type="password" name="password" id="password" <%= (mode == 'details')? 'disabled' : '' %>>
-                    <span id="errorPassword" class="errors-text"></span> 
+                    <input type="password" name="password" id="password" <%= (mode == 'details')? 'disabled' : '' %> class="<%=(errors.find(e => e.path.includes('password')))? 'error-input' : '' %>">
+                    <span id="errorPassword" class="errors-text">
+                        <% if (errors.find(e => e.path.includes('password'))) { %>
+                            <%= errors.find(e => e.path.includes('password')).message %>
+                        <% } %>
+                    </span> 
 
                     <label for="firstname">Firstname: <span class="symbol-required">*</span></label>
-                    <input type="text" name="firstname" id="firstname" value="<%= user.firstname %>" <%= (mode == 'details')? 'disabled' : '' %>>
-                    <span id="errorFirstname" class="errors-text"></span>
+                    <input type="text" name="firstname" id="firstname" value="<%= user.firstname %>" <%= (mode == 'details')? 'disabled' : '' %> class="<%=(errors.find(e => e.path.includes('firstname')))? 'error-input' : '' %>">
+                    <span id="errorFirstname" class="errors-text">
+                        <% if (errors.find(e => e.path.includes('firstname'))) { %>
+                            <%= errors.find(e => e.path.includes('firstname')).message %>
+                        <% } %>
+                    </span> 
 
                     <label for="lastname">Lastname: <span class="symbol-required">*</span></label>
-                    <input type="text" name="lastname" id="lastname" value="<%= user.lastname %>" <%= (mode == 'details')? 'disabled' : '' %>>
-                    <span id="errorLastname" class="errors-text"></span>  
+                    <input type="text" name="lastname" id="lastname" value="<%= user.lastname %>" <%= (mode == 'details')? 'disabled' : '' %> class="<%=(errors.find(e => e.path.includes('lastname')))? 'error-input' : '' %>">
+                    <span id="errorLastname" class="errors-text">
+                        <% if (errors.find(e => e.path.includes('lastname'))) { %>
+                            <%= errors.find(e => e.path.includes('lastname')).message %>
+                        <% } %>
+                    </span>  
 
-                    <p id="errorSummary" class="errors-text hidden-error">Form contains errors</p>
+                    <p id="errorSummary" class="errors-text <%=(errors.find(e => e))? '' : 'hidden-error' %>">Form contains errors</p>
 
                     <div class="form-buttons">
                         <% if (mode == 'details') { %>

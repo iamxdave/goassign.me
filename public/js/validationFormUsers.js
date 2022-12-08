@@ -22,11 +22,11 @@ function validateForm() {
         if(!checkRequired(passwordInput.value)) {
             valid = false;
             passwordInput.classList.add("error-input");
-            passwordError.innerText = "Field is required";
-        } else if(!checkTextLengthRange(passwordInput.value, 5, 60)) {
+            passwordError.innerText = "Password is required";
+        } else if(!checkTextLengthRange(passwordInput.value, 7, 42)) {
             valid = false;
             passwordInput.classList.add("error-input");
-            passwordError.innerText = "Field should contain 5-30 characters";
+            passwordError.innerText = "Password should contain 7-42 characters";
         }
     } else {
         resetErrors([usernameInput, emailInput, firstnameInput, lastnameInput], [usernameError, emailError, firstnameError, lastnameError], summaryError);
@@ -35,45 +35,45 @@ function validateForm() {
     if(!checkRequired(usernameInput.value)) {
         valid = false;
         usernameInput.classList.add("error-input");
-        usernameError.innerText = "Field is required";
-    } else if(!checkTextLengthRange(usernameInput.value, 5, 60)) {
+        usernameError.innerText = "Username is required";
+    } else if(!checkTextLengthRange(usernameInput.value, 2, 30)) {
         valid = false;
         usernameInput.classList.add("error-input");
-        usernameError.innerText = "Field should contain 5-30 characters";
+        usernameError.innerText = "Username should contain 2-30 characters";
     }
 
     if(!checkRequired(emailInput.value)) {
         valid = false;
         emailInput.classList.add("error-input");
-        emailError.innerText = "Field is required";
-    } else if(!checkTextLengthRange(emailInput.value, 5, 60)) {
+        emailError.innerText = "Email is required";
+    } else if(!checkTextLengthRange(emailInput.value, 5, 30)) {
         valid = false;
         emailInput.classList.add("error-input");
-        emailError.innerText = "Field should contain 5-30 characters";
+        emailError.innerText = "Email should contain 5-30 characters";
     } else if(!checkEmail(emailInput.value)) {
         valid = false;
         emailInput.classList.add("error-input");
-        emailError.innerText = "Field should contain valid email format";
+        emailError.innerText = "Email should contain valid email format";
     }
 
     if(!checkRequired(firstnameInput.value)) {
         valid = false;
         firstnameInput.classList.add("error-input");
-        firstnameError.innerText = "Field is required";
-    } else if(!checkTextLengthRange(firstnameInput.value, 5, 60)) {
+        firstnameError.innerText = "Firstname is required";
+    } else if(!checkTextLengthRange(firstnameInput.value, 2, 30)) {
         valid = false;
         firstnameInput.classList.add("error-input");
-        firstnameError.innerText = "Field should contain 5-30 characters";
+        firstnameError.innerText = "Firstname should contain 2-30 characters";
     }
 
     if(!checkRequired(lastnameInput.value)) {
         valid = false;
         lastnameInput.classList.add("error-input");
-        lastnameError.innerText = "Field is required";
-    } else if(!checkTextLengthRange(lastnameInput.value, 5, 60)) {
+        lastnameError.innerText = "Lastname is required";
+    } else if(!checkTextLengthRange(lastnameInput.value, 2, 30)) {
         valid = false;
         lastnameInput.classList.add("error-input");
-        lastnameError.innerText = "Field should contain 5-30 characters";
+        lastnameError.innerText = "Lastname should contain 2-30 characters";
     }
 
     if(!valid) {
