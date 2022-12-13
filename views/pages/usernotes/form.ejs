@@ -1,13 +1,9 @@
 <%- include('../../partials/header') %>
     <main>
         <div class="main-divider">
-            <section>
-                <div class="alert">
-                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-                    Successfully added usernote
-                </div>  
+            <section> 
                 <h2><%= title %></h2>
-                <form class="form" method="post" action="<%= action %>" novalidate>
+                <form class="form" method="post" action="<%= action %>" novalidate onsubmit="">
                     <input type="hidden" name="_id" value="<%= usernote._id %>">
 
                     <label for="user">User: <span class="symbol-required">*</span></label>
@@ -15,7 +11,11 @@
                         <option value="default">-- Select user --</option>
                         <% for (let u of allUsers) { %>
                             <option value="<%= u._id %>" label="<%= u.username %>"
-                                <%= (usernote._id && u._id.toString() == usernote.user._id.toString())? 'selected' : ''%>></option>
+                                <% if(errors.find(e => e)) { %>
+                                    <%= (usernote.user && u._id.toString() == usernote.user.toString())? 'selected' : ''%>></option>
+                                <% } else {%>
+                                    <%= (usernote.user && u._id.toString() == usernote.user._id.toString())? 'selected' : ''%>></option>
+                                <% } %>
                         <% } %>
                     </select>
                     <span id="errorUser" class="errors-text">
@@ -25,11 +25,15 @@
                     </span>
                     
                     <label for="note">Note: <span class="symbol-required">*</span></label>
-                    <select name="note" id="note" required <%= (mode == 'details')? 'disabled' : ''%> class="<%=(errors.find(e => e.name == 'note'))? 'error-input' : '' %>"">
+                    <select name="note" id="note" required <%= (mode == 'details')? 'disabled' : ''%> class="<%=(errors.find(e => e.name == 'note'))? 'error-input' : '' %>">
                         <option value="default">-- Select note --</option>
                         <% for (let n of allNotes) { %>
                             <option value="<%= n._id %>" label="<%= n.title %>"
-                                <%= (usernote._id && n._id.toString() == usernote.note._id.toString())? 'selected' : ''%>></option>
+                                <% if(errors.find(e => e)) { %>
+                                    <%= (usernote.note && n._id.toString() == usernote.note.toString())? 'selected' : ''%>></option>
+                                <% } else {%>
+                                    <%= (usernote.note && n._id.toString() == usernote.note._id.toString())? 'selected' : ''%>></option>
+                                <% } %>
                         <% } %>
                     </select>
                     <span id="errorNote" class="errors-text">

@@ -3,12 +3,15 @@ const convertDate = require('../utils/convertDate');
 
 exports.addNote = (req, res, next) => {
     const data = { ...req.body };
+    data.implementation = (data.implementation == '')? null : data.implementation;
+    
     NoteRepository.createNote(data)
         .then(result => res.redirect('/notes'))
         .catch(err => {
             data.creation = convertDate();
             res.render('pages/notes/form', {
                 note: data,
+                oldNote: {},
                 title: 'New note',
                 mode: 'create',
                 btn: 'Add',
@@ -21,13 +24,16 @@ exports.addNote = (req, res, next) => {
 
 exports.updateNote = (req, res, next) => {
     const data = { ...req.body };
+    data.implementation = (data.implementation == '')? null : data.implementation;
+    
     NoteRepository.updateNote(data._id, data)
         .then(result => res.redirect('/notes'))
         .catch(err => {
             NoteRepository.getNoteById(data._id)
             .then(note => {
                 res.render('pages/notes/form', { 
-                    note: note,
+                    note: data,
+                    oldNote: note,
                     title: 'Edit note',
                     mode: 'edit',
                     btn: 'Confirm',
@@ -58,6 +64,7 @@ exports.showNotes = (req, res, next) => {
 exports.showNoteAdd = (req, res, next) => {
     res.render('pages/notes/form', {
         note: { creation: convertDate() },
+        oldNote: {},
         title: 'New note',
         mode: 'create',
         btn: 'Add',
@@ -72,6 +79,7 @@ exports.showNoteEdit = (req, res, next) => {
     .then(note => {
         res.render('pages/notes/form', { 
             note: note,
+            oldNote: note,
             title: 'Edit note',
             mode: 'edit',
             btn: 'Confirm',
@@ -87,6 +95,7 @@ exports.showNoteDetails = (req, res, next) => {
     .then(note => {
         res.render('pages/notes/form', { 
             note: note,
+            oldNote: note,
             title: 'Note details',
             mode: 'details',
             action: '',

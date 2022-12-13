@@ -15,19 +15,7 @@ function validateForm() {
     const fileName = location.href.split("/").slice(-1);
 
     if(fileName != 'edit.html') {
-        const passwordInput = document.querySelector('#password');
-        const passwordError = document.querySelector('#errorPassword');
-        resetErrors([usernameInput, emailInput, passwordInput, firstnameInput, lastnameInput], [usernameError, emailError, passwordError, firstnameError, lastnameError], summaryError);
-
-        if(!checkRequired(passwordInput.value)) {
-            valid = false;
-            passwordInput.classList.add("error-input");
-            passwordError.innerText = "Password is required";
-        } else if(!checkTextLengthRange(passwordInput.value, 7, 42)) {
-            valid = false;
-            passwordInput.classList.add("error-input");
-            passwordError.innerText = "Password should contain 7-42 characters";
-        }
+        resetErrors([usernameInput, emailInput, firstnameInput, lastnameInput], [usernameError, emailError, firstnameError, lastnameError], summaryError);
     } else {
         resetErrors([usernameInput, emailInput, firstnameInput, lastnameInput], [usernameError, emailError, firstnameError, lastnameError], summaryError);
     }

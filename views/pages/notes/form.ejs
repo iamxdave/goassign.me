@@ -2,12 +2,8 @@
     <main>
         <div class="main-divider">
             <section>
-                <div class="alert">
-                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-                    Successfully added note
-                </div> 
                 <h2><%= title %></h2>
-                <form class="form form-larger" method="post" action="<%= action %>" novalidate onsubmit="">
+                <form class="form form-larger" method="post" action="<%= action %>" novalidate onsubmit="return validateForm();">
                     <input type="hidden" name="_id" value="<%= note._id %>"> 
                     
                     <label for="title">Title: <span class="symbol-required">*</span></label>
@@ -19,10 +15,10 @@
                     </span>
                 
                     <label for="creation">Creation:</label>
-                    <input type="date" name="creation" id="creation" value="<%= note.creation %>" disabled>
+                    <input type="date" name="creation" id="creation" value="<%= note.creation %>" readonly>
 
                     <label for="implementation">Implementation:</label>
-                    <input type="date" name="implementation" id="implementation"  value="<%= note.creation %>" <%= (mode == 'details')? 'disabled' : '' %>>
+                    <input type="date" name="implementation" id="implementation"  value="<%= note.implementation %>" min="<%= note.creation %>" <%= (mode == 'details')? 'disabled' : '' %>>
                 
                     <label for="description">Description: <span class="symbol-required">*</span></label>
                     <textarea name="description" id="description" cols="30" rows="10" <%= (mode == 'details')? 'disabled' : '' %> class="<%=(errors.find(e => e.path.includes('description')))? 'error-input' : '' %>"><%= note.description %></textarea>
@@ -65,7 +61,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <% for (let un of note.usernotes) { %> 
+                            <% for (let un of oldNote.usernotes) { %> 
                                 <tr>
                                     <td><a href="/users/details/<%= un.user._id %>"></a><%= un.user.username %></td>
                                     <td class="display"><%= un.user.email %></td>

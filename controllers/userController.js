@@ -15,6 +15,7 @@ exports.addUser = (req, res, next) => {
             })
             res.render('pages/users/form', {
                 user: data,
+                oldUser: {},
                 title: 'New user',
                 mode: 'create',
                 btn: 'Add',
@@ -44,7 +45,8 @@ exports.updateUser = (req, res, next) => {
            UserRepository.getUserById(data._id)
             .then(user => {
                 res.render('pages/users/form', { 
-                    user: user,
+                    user: data,
+                    oldUser: user,
                     title: 'Edit user',
                     mode: 'edit',
                     btn: 'Confirm',
@@ -74,6 +76,7 @@ exports.showUsers = (req, res, next) => {
 exports.showUserAdd = (req, res, next) => {
     res.render('pages/users/form', {
         user: {},
+        oldUser: {},
         title: 'New user',
         mode: 'create',
         btn: 'Add',
@@ -88,6 +91,7 @@ exports.showUserEdit = (req, res, next) => {
     .then(user => {
         res.render('pages/users/form', { 
             user: user,
+            oldUser: user,
             title: 'Edit user',
             mode: 'edit',
             btn: 'Confirm',
@@ -103,6 +107,7 @@ exports.showUserDetails = (req, res, next) => {
     .then(user => {
         res.render('pages/users/form', { 
             user: user,
+            oldUser: user,
             title: 'User details',
             mode: 'details',
             action: '',

@@ -1,13 +1,9 @@
 <%- include('../../partials/header') %>
     <main>
         <div class="main-divider">
-            <section> 
-                <div class="alert">
-                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-                    Successfully added user
-                </div>          
+            <section>       
                 <h2><%= title %></h2>
-                <form class="form" method="post" action="<%= action %>" novalidate>
+                <form class="form" method="post" action="<%= action %>" novalidate onsubmit="return validateForm();">
                     <input type="hidden" name="_id" value="<%= user._id %>">
 
                     <label for="username">Username: <span class="symbol-required">*</span></label>
@@ -26,6 +22,7 @@
                         <% } %>
                     </span> 
                     
+                    <% if(mode != 'details') { %>
                     <label for="password">Password: <span class="symbol-required">*</span></label>
                     <input type="password" name="password" id="password" <%= (mode == 'details')? 'disabled' : '' %> class="<%=(errors.find(e => e.path.includes('password')))? 'error-input' : '' %>">
                     <span id="errorPassword" class="errors-text">
@@ -33,6 +30,7 @@
                             <%= errors.find(e => e.path.includes('password')).message %>
                         <% } %>
                     </span> 
+                    <% } %>
 
                     <label for="firstname">Firstname: <span class="symbol-required">*</span></label>
                     <input type="text" name="firstname" id="firstname" value="<%= user.firstname %>" <%= (mode == 'details')? 'disabled' : '' %> class="<%=(errors.find(e => e.path.includes('firstname')))? 'error-input' : '' %>">
@@ -84,7 +82,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <% for (let un of user.usernotes) { %> 
+                            <% for (let un of oldUser.usernotes) { %> 
                                 <tr>
                                     <td><a href="/notes/details/<%= un.note._id %>"></a><%= un.note.title %></td>
                                     <td class="display"><%= un.note.implementation %></td>

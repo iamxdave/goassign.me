@@ -31,9 +31,9 @@ exports.getUsernoteById = (id) => {
 
 
 exports.createUsernote = async (body) => {
-    // const usernote = await Usernote.findOne({where: { user_id: body.user, note_id: body.note } });
-    // if(usernote != null)
-    //     return this.updateUsernote(usernote.dataValues._id, body);
+    const usernote = await Usernote.findOne({where: { user_id: body.user, note_id: body.note } });
+    if(usernote != null)
+        return this.updateUsernote(usernote.dataValues._id, body);
 
     return await Usernote.create({
         user_id: body.user,

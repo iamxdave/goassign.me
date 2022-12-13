@@ -21,9 +21,9 @@ module.exports = () => {
         .then(users => {
             if(!users || users.length == 0) {
                 return User.bulkCreate([
-                    {username: 'username1', password: 'pass1', email: 'email1', firstname: 'firstname1', lastname: 'lastname1'},
-                    {username: 'username2', password: 'pass2', email: 'email2', firstname: 'firstname2', lastname: 'lastname2'},
-                    {username: 'username3', password: 'pass3', email: 'email3', firstname: 'firstname3', lastname: 'lastname3'},
+                    {username: 'username1', password: 'pass1', email: 'email1@email.com', firstname: 'Firstname1', lastname: 'Lastname1'},
+                    {username: 'username2', password: 'pass2', email: 'email2@email.com', firstname: 'Firstname2', lastname: 'Lastname2'},
+                    {username: 'username3', password: 'pass3', email: 'email3@email.com', firstname: 'Firstname3', lastname: 'Lastname3'},
                 ])
                 .then( () => {
                     return User.findAll();

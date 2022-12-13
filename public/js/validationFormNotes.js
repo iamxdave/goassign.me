@@ -38,9 +38,3 @@ function validateForm() {
     return valid;
 }
 
-const implementationInput = document.querySelector('#implementation');
-
-document.addEventListener('DOMContentLoaded', () => {
-    implementationInput.valueAsDate = new Date();
-    implementationInput.setAttribute("min", implementationInput.value);
-}, false);

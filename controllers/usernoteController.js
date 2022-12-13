@@ -5,13 +5,18 @@ const UsernoteRepository = require('../repositories/UsernoteRepository');
 
 exports.addUsernote = (req, res, next) => {
     const data = { ...req.body };
-    if(data.note == 'default' || data.user == 'default') {
-        const val = [
-            (data.user == 'default')? { name: 'user' } : '',
-            (data.note == 'default')? { name: 'note' } : ''
-        ];
+    
+    const e = [
+        (data.user == 'default')? { name: 'user' } : '',
+        (data.note == 'default')? { name: 'note' } : ''
+    ];
 
+    if(data.note == 'default' || data.user == 'default') {
+        
+        data.write = (data.write == 'on')? true : false;
+        data.delete = (data.delete == 'on')? true : false;
         let allUsers, allNotes;
+        
         UserRepository.getUsers()
             .then(users => {
                 allUsers = users;
@@ -19,6 +24,7 @@ exports.addUsernote = (req, res, next) => {
             })
             .then(notes => {
                 allNotes = notes;
+                console.log(data);
                 res.render('pages/usernotes/form', {
                     usernote: data,
                     title: 'Add user permissions',
@@ -28,44 +34,29 @@ exports.addUsernote = (req, res, next) => {
                     btn: 'Add',
                     action: '/usernotes/add',
                     navLocation: 'Usernote', 
-                    errors: val
+                    errors: e
                 });
             })
     } else {
         UsernoteRepository.createUsernote(data)
-            .then(result => res.redirect('/usernotes'))
-            .catch(err => {
-                let allUsers, allNotes;
-                UserRepository.getUsers()
-                    .then(users => {
-                        allUsers = users;
-                        return NoteRepository.getNotes();
-                    })
-                    .then(notes => {
-                        allNotes = notes;
-                        res.render('pages/usernotes/form', {
-                            usernote: {},
-                            title: 'Add user permissions',
-                            allUsers: allUsers,
-                            allNotes: allNotes,
-                            mode: 'create',
-                            btn: 'Add',
-                            action: '/usernotes/add',
-                            navLocation: 'Usernote', 
-                            errors: err.errors
-                        });
-                    })
-            });
-    }
+            .then(result => res.redirect('/usernotes'));
+    };
+    
+    
 };
 
 exports.updateUsernote = (req, res, next) => {
     const data = { ...req.body };
+    
+    const e = [
+        (data.user == 'default')? { name: 'user' } : '',
+        (data.note == 'default')? { name: 'note' } : ''
+    ];
+
     if(data.note == 'default' || data.user == 'default') {
-        const val = [
-            (data.user == 'default')? { name: 'user' } : '',
-            (data.note == 'default')? { name: 'note' } : ''
-        ];
+        
+        data.write = (data.write == 'on')? true : false;
+        data.delete = (data.delete == 'on')? true : false;
 
         let allUsers, allNotes;
         UserRepository.getUsers()
@@ -77,48 +68,24 @@ exports.updateUsernote = (req, res, next) => {
                 allNotes = notes;
                 UsernoteRepository.getUsernoteById(data._id)
                     .then(usernote => {
-                res.render('pages/usernotes/form', {
-                    usernote: usernote,
-                    title: 'Edit usernote',
-                    allUsers: allUsers,
-                    allNotes: allNotes,
-                    mode: 'edit',
-                    btn: 'Confirm',
-                    action: '/usernotes/edit',
-                    navLocation: 'Usernote', 
-                    errors: val
-                });
+                        res.render('pages/usernotes/form', {
+                            usernote: data,
+                            title: 'Edit usernote',
+                            allUsers: allUsers,
+                            allNotes: allNotes,
+                            mode: 'edit',
+                            btn: 'Confirm',
+                            action: '/usernotes/edit',
+                            navLocation: 'Usernote', 
+                            errors: e
+                        });
+                    })
             })
-        })
     } else {
         UsernoteRepository.updateUsernote(data._id, data)
-            .then(result => res.redirect('/usernotes'))
-            .catch(err => {
-                let allUsers, allNotes;
-                UserRepository.getUsers()
-                    .then(users => {
-                        allUsers = users;
-                        return NoteRepository.getNotes();
-                    })
-                    .then(notes => {
-                        allNotes = notes;
-                        UsernoteRepository.getUsernoteById(data._id)
-                            .then(usernote => {
-                                res.render('pages/usernotes/form', { 
-                                    usernote: usernote,
-                                    title: 'Edit usernote',
-                                    allUsers: allUsers,
-                                    allNotes: allNotes,
-                                    mode: 'edit',
-                                    btn: 'Confirm',
-                                    action: '/usernotes/edit',
-                                    navLocation: 'Usernote',
-                                    errors: err.errors
-                                });
-                            });
-                    });
-            });
-    }
+            .then(result => res.redirect('/usernotes'));
+    };
+    
 };
 
 exports.deleteUsernote = (req, res, next) => {
