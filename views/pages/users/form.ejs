@@ -89,10 +89,10 @@
                                     <td><a href="/notes/details/<%= un.note._id %>"></a><%= un.note.title %></td>
                                     <td class="display"><%= un.note.implementation %></td>
                                     <td class="table-checkbox">
-                                        <input type="checkbox" id="write" name="write" value="permission" <%= (un.write == 'true')? 'checked' : '' %> disabled>
+                                        <input type="checkbox" id="write" name="write" value="permission" <%= (un.write == true)? 'checked' : '' %> disabled>
                                     </td>
                                     <td class="table-checkbox">
-                                        <input type="checkbox" id="delete" name="delete" value="permission" <%= (un.delete == 'true')? 'checked' : '' %> disabled>
+                                        <input type="checkbox" id="delete" name="delete" value="permission" <%= (un.delete == true)? 'checked' : '' %> disabled>
                                     </td>
                                 </tr>
                             <% } %>

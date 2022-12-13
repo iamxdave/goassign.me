@@ -2,7 +2,6 @@ const UserRepository = require('../repositories/UserRepository');
 
 exports.addUser = (req, res, next) => {
     const data = { ...req.body };
-    console.log(data);
     UserRepository.createUser(data)
         .then(result => res.redirect('/users'))
         .catch(err => {
@@ -15,7 +14,7 @@ exports.addUser = (req, res, next) => {
                 }
             })
             res.render('pages/users/form', {
-                user: {},
+                user: data,
                 title: 'New user',
                 mode: 'create',
                 btn: 'Add',
@@ -28,7 +27,6 @@ exports.addUser = (req, res, next) => {
 
 exports.updateUser = (req, res, next) => {
     const data = { ...req.body };
-    console.log(data);
     if(data.password == '')
         data.password = UserRepository.getUserById(data._id).password;
         
@@ -108,7 +106,8 @@ exports.showUserDetails = (req, res, next) => {
             title: 'User details',
             mode: 'details',
             action: '',
-            navLocation: 'User' 
+            navLocation: 'User',
+            errors: [] 
         });
     })
 }

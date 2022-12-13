@@ -20,7 +20,7 @@ exports.addUsernote = (req, res, next) => {
             .then(notes => {
                 allNotes = notes;
                 res.render('pages/usernotes/form', {
-                    usernote: {},
+                    usernote: data,
                     title: 'Add user permissions',
                     allUsers: allUsers,
                     allNotes: allNotes,
@@ -75,21 +75,24 @@ exports.updateUsernote = (req, res, next) => {
             })
             .then(notes => {
                 allNotes = notes;
+                UsernoteRepository.getUsernoteById(data._id)
+                    .then(usernote => {
                 res.render('pages/usernotes/form', {
-                    usernote: {},
-                    title: 'Add user permissions',
+                    usernote: usernote,
+                    title: 'Edit usernote',
                     allUsers: allUsers,
                     allNotes: allNotes,
-                    mode: 'create',
-                    btn: 'Add',
-                    action: '/usernotes/add',
+                    mode: 'edit',
+                    btn: 'Confirm',
+                    action: '/usernotes/edit',
                     navLocation: 'Usernote', 
                     errors: val
                 });
             })
+        })
     } else {
         UsernoteRepository.updateUsernote(data._id, data)
-            .then(result => res.redirect('/users'))
+            .then(result => res.redirect('/usernotes'))
             .catch(err => {
                 let allUsers, allNotes;
                 UserRepository.getUsers()
@@ -109,7 +112,7 @@ exports.updateUsernote = (req, res, next) => {
                                     mode: 'edit',
                                     btn: 'Confirm',
                                     action: '/usernotes/edit',
-                                    navLocation: 'Usernote', 
+                                    navLocation: 'Usernote',
                                     errors: err.errors
                                 });
                             });
@@ -202,7 +205,8 @@ exports.showUsernoteDetails = (req, res, next) => {
                         allNotes: allNotes,
                         mode: 'details',
                         action: '',
-                        navLocation: 'Usernote' 
+                        navLocation: 'Usernote',
+                        errors: []
                     });
                 });
     });

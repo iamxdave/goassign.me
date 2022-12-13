@@ -6,8 +6,9 @@ exports.addNote = (req, res, next) => {
     NoteRepository.createNote(data)
         .then(result => res.redirect('/notes'))
         .catch(err => {
+            data.creation = convertDate();
             res.render('pages/notes/form', {
-                note: { creation: convertDate() },
+                note: data,
                 title: 'New note',
                 mode: 'create',
                 btn: 'Add',
@@ -89,7 +90,8 @@ exports.showNoteDetails = (req, res, next) => {
             title: 'Note details',
             mode: 'details',
             action: '',
-            navLocation: 'Note' 
+            navLocation: 'Note',
+            errors: [] 
         });
     })
 }
