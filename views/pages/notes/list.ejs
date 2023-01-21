@@ -2,16 +2,16 @@
     <main>
         <div class="main-divider">
             <section>
-                <h2>Notes</h2>
+                <h2><%=__('note.list.title')%></h2>
                 <% if(notes == null || notes.length == 0) { %>
-                    <h3>There are no notes</h3>
+                    <h3><%=__('note.list.noData')%></h3>
                 <% } else { %>
                     <table class="table-list">
                         <thead>
                             <tr>
-                                <th>Title</th>
-                                <th>Implementation</th>
-                                <th class="display">Actions</th>
+                                <th><%=__('note.fields.title')%></th>
+                                <th><%=__('note.fields.implementation')%></th>
+                                <th class="display"><%=__('list.actions.title')%></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -23,18 +23,18 @@
                                     </td>
                                     <td class="display">
                                         <ul class="list-actions">
-                                            <li><a href="notes/details/<%= note._id %>" class="list-actions-button-details">Details</a></li>
-                                            <li><a href="notes/edit/<%= note._id %>" class="list-actions-button-edit">Edit</a></li>
-                                            <li><a href="notes/delete/<%= note._id %>" class="list-actions-button-delete">Delete</a></li>
+                                            <li><a href="notes/details/<%= note._id %>" class="list-actions-button-details"><%=__('list.actions.details')%></a></li>
+                                            <li><a href="notes/edit/<%= note._id %>" class="list-actions-button-edit"><%=__('list.actions.edit')%></a></li>
+                                            <li><a href="notes/delete/<%= note._id %>" class="list-actions-button-delete"><%=__('list.actions.delete')%></a></li>
                                         </ul>
                                     </td>
                                 </tr>
                                 <tr class="display-small">
                                     <td colspan="2">
                                         <ul class="list-actions">
-                                            <li><a href="notes/details/<%= note._id %>" class="list-actions-button-details">Details</a></li>
-                                            <li><a href="notes/edit/<%= note._id %>" class="list-actions-button-edit">Edit</a></li>
-                                            <li><a href="notes/delete/<%= note._id %>" class="list-actions-button-delete">Delete</a></li>
+                                            <li><a href="notes/details/<%= note._id %>" class="list-actions-button-details"><%=__('list.actions.details')%></a></li>
+                                            <li><a href="notes/edit/<%= note._id %>" class="list-actions-button-edit"><%=__('list.actions.edit')%></a></li>
+                                            <li><a href="notes/delete/<%= note._id %>" class="list-actions-button-delete"><%=__('list.actions.delete')%></a></li>
                                         </ul>
                                     </td>
                                 </tr>
@@ -43,7 +43,7 @@
                     </table>
                 <% } %> 
                 <div class="form-buttons">
-                    <a href="notes/add" class="button-add">Add new note</a>
+                    <a href="notes/add" class="button-add"><%=__('note.list.addNew')%></a>
                 </div>
             </section>
         </div>

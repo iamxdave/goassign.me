@@ -18,11 +18,18 @@
             <div>
                 <nav>
                     <ul>
-                        <li><a href="/users" class="<%= navLocation == 'User' ? 'btn-style-selected' : 'btn-style'%>">Users</a></li>
-                        <li><a href="/usernotes" class="<%= navLocation == 'Usernote' ? 'btn-style-selected' : 'btn-style'%>">Usernotes</a></li>
-                        <li><a href="/notes" class="<%= navLocation == 'Note' ? 'btn-style-selected' : 'btn-style'%>">Notes</a></li>
+                        <% if(loggedUser) { %>
+                            <li><a href="/users" class="<%= navLocation == 'User' ? 'btn-style-selected' : 'btn-style'%>"><%=__('nav.users')%></a></li>
+                            <li><a href="/usernotes" class="<%= navLocation == 'Usernote' ? 'btn-style-selected' : 'btn-style'%>"><%=__('nav.usernotes')%></a></li>
+                            <li><a href="/notes" class="<%= navLocation == 'Note' ? 'btn-style-selected' : 'btn-style'%>"><%=__('nav.notes')%></a></li>
+                        <% } %>
                     </ul>
                 </nav>
+                <ul>
+                    <li><a href="/changeLang/pl" class="<%= lang == 'pl' ? 'active' : ''%>">PL</a></li>
+                    <li><a href="/changeLang/en" class="<%= lang == 'en' ? 'active' : ''%>">EN</a></li>
+                </ul>
             </div>
         </div>
+        <%- include('../partials/login.ejs') %>
     </header>

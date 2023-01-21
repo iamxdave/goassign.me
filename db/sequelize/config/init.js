@@ -5,6 +5,7 @@ const Note = require('../../../models/Note');
 const Usernote = require('../../../models/Usernote');
 
 const convertDate = require('../../../utils/convertDate');
+const auth = require('../../../utils/auth');
 
 module.exports = () => {
     User.hasMany(Usernote, {as: 'usernotes', foreignKey: {name: 'user_id', allowNull: false}, constraints: true, onDelete: 'CASCADE'});
@@ -21,9 +22,9 @@ module.exports = () => {
         .then(users => {
             if(!users || users.length == 0) {
                 return User.bulkCreate([
-                    {username: 'username1', password: 'pass1', email: 'email1@email.com', firstname: 'Firstname1', lastname: 'Lastname1'},
-                    {username: 'username2', password: 'pass2', email: 'email2@email.com', firstname: 'Firstname2', lastname: 'Lastname2'},
-                    {username: 'username3', password: 'pass3', email: 'email3@email.com', firstname: 'Firstname3', lastname: 'Lastname3'},
+                    {username: 'username1', password: auth.hashPassword('pass1'), email: 'email1@email.com', firstname: 'Firstname1', lastname: 'Lastname1'},
+                    {username: 'username2', password: auth.hashPassword('pass2'), email: 'email2@email.com', firstname: 'Firstname2', lastname: 'Lastname2'},
+                    {username: 'username3', password: auth.hashPassword('pass3'), email: 'email3@email.com', firstname: 'Firstname3', lastname: 'Lastname3'},
                 ])
                 .then( () => {
                     return User.findAll();

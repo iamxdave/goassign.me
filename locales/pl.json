@@ -1,0 +1,155 @@
+{
+	"main-page": {
+		"content": "Strona główna"
+	},
+	"nav": {
+		"notes": "Notatki",
+		"usernotes": "Notatki użytkowników",
+		"users": "Użytkownicy"
+	},
+	"list": {
+		"actions": {
+			"title": "Akcje",
+			"details": "Szczegóły",
+			"edit": "Edytuj",
+			"delete": "Usuń"
+		}
+	},
+	"form": {
+		"actions": {
+			"return": "Powrót",
+			"edit": "Edytuj",
+			"cancel": "Anuluj",
+			"add": "Dodaj",
+			"confirm": "Zatwierdź"
+		}
+	},
+	"errors": {
+		"form": "Formularz zawiera błędy"
+	},
+	"note": {
+		"title": "Notatka",
+		"fields": {
+			"title": "Tytuł",
+			"creation": "Data utworzenia",
+			"implementation": "Data ukończenia",
+			"description": "Opis"
+		},
+		"list": {
+			"title": "Notatki",
+			"addNew": "Dodaj nową notatkę",
+			"noData": "Nie ma notatek w bazie danych",
+			"pageTitle": "Lista notatek"
+		},
+		"form": {
+			"title": "Uprawnienia użytkowników do notatki",
+			"add": {
+				"pageTitle": "Dodaj notatkę"
+			},
+			"edit": {
+				"pageTitle": "Edytuj notatkę"
+			},
+			"details": {
+				"pageTitle": "Informacje o notatce"
+			}
+		},
+		"errors": {
+			"title": {
+				"notEmpty": "Tytuł jest wymagany",
+				"len": "Tytuł powinien zawierać 5-80 znaków"
+			},
+			"description": {
+				"notEmpty": "Opis jest wymagany",
+				"len": "Opis powinien zawierać 5-400 znaków"
+			}
+		}
+	},
+	"usernote": {
+		"title": "Notatka użytkownika",
+		"fields": {
+			"user": "Użytkownik",
+			"note": "Notatka",
+			"write": "Pisanie",
+			"delete": "Usuwanie"
+		},
+		"list": {
+			"title": "Notatki",
+			"addNew": "Dodaj nową notatkę do użytkownika",
+			"noData": "Nie ma notatek w bazie danych",
+			"pageTitle": "Lista notatek użytkowników"
+		},
+		"form": {
+			"title": "Uprawnienia",
+			"add": {
+				"pageTitle": "Dodaj uprawnienia"
+			},
+			"edit": {
+				"pageTitle": "Edytuj uprawnienia"
+			},
+			"details": {
+				"pageTitle": "Informacje o uprawnieniach"
+			}
+		},
+		"errors": {
+			"user": {
+				"notEmpty": "Użytkownik jest wymagany"
+			},
+			"note": {
+				"notEmpty": "Notatka jest wymagana"
+			}
+		}
+	},
+	"user": {
+		"title": "Użytkownik",
+		"fields": {
+			"firstname": "Imię",
+			"lastname": "Nazwisko",
+			"username": "Nazwa użytkownika",
+			"email": "Email",
+			"password": "Hasło"
+		},
+		"list": {
+			"title": "Użytkownicy",
+			"addNew": "Dodaj nowego użytkownika",
+			"noData": "Nie ma użytkowników w bazie danych",
+			"pageTitle": "Lista użytkowników"
+		},
+		"form": {
+			"title": "Uprawnienia użytkownika do notatek",
+			"add": {
+				"pageTitle": "Dodaj użytkownika"
+			},
+			"edit": {
+				"pageTitle": "Edytuj użytkownika"
+			},
+			"details": {
+				"pageTitle": "Informacje o użytkowniku"
+			}
+		},
+		"errors": {
+			"username": {
+				"notEmpty": "Nazwa używtkownika jest wymagana",
+				"len": "Nazwa użytkownika powinna zawierać 2-30 znaków"
+			},
+			"password": {
+				"notEmpty": "Hasło jest wymagane",
+				"len": "Hasło powinno zawierać 7-42 znaków"
+			},
+			"email": {
+				"notEmpty": "Email jest wymagany",
+				"len": "Email powinien zawierać 5-30 znaków",
+				"isEmail": "Email powinien być prawidłowy"
+			},
+			"firstname": {
+				"notEmpty": "Imię jest wymagane",
+				"len": "Imię powinno zawierać 2-30 znaków",
+				"isFirstLetterUppercased": "Pierwsza litera powinna być wielka"
+			},
+			"lastname": {
+				"notEmpty": "Nazwisko jest wymagane",
+				"len": "Nazwisko powinno zawierać 2-30 znaków",
+				"isFirstLetterUppercased": "Pierwsza litera powinna być wielka"
+			}
+		}
+	}
+}

@@ -1,0 +1,155 @@
+{
+	"main-page": {
+		"content": "Main Page"
+	},
+	"nav": {
+		"notes": "Notes",
+		"usernotes": "Usernotes",
+		"users": "Users"
+	},
+	"list": {
+		"actions": {
+			"title": "Actions",
+			"details": "Details",
+			"edit": "Edit",
+			"delete": "Delete"
+		}
+	},
+	"form": {
+		"actions": {
+			"return": "Return",
+			"edit": "Edit",
+			"cancel": "Cancel",
+			"add": "Add",
+			"confirm": "Confirm"
+		}
+	},
+	"errors": {
+		"form": "Form contains errors"
+	},
+	"note": {
+		"title": "Note",
+		"fields": {
+			"title": "Title",
+			"creation": "Creation",
+			"implementation": "Implementation",
+			"description": "Description"
+		},
+		"list": {
+			"title": "Notes",
+			"addNew": "Add new note",
+			"noData": "No notes in database",
+			"pageTitle": "List of notes"
+		},
+		"form": {
+			"title": "Users permissions for the note",
+			"add": {
+				"pageTitle": "Adding a new note"
+			},
+			"edit": {
+				"pageTitle": "Editing a note"
+			},
+			"details": {
+				"pageTitle": "Note details"
+			}
+		},
+		"errors": {
+			"title": {
+				"notEmpty": "Title is required",
+				"len": "Title should contain 5-80 characters"
+			},
+			"description": {
+				"notEmpty": "Description is required",
+				"len": "Description should contain 5-400 characters"
+			}
+		}
+	},
+	"usernote": {
+		"title": "Usernote",
+		"fields": {
+			"user": "User",
+			"note": "Note",
+			"write": "Write",
+			"delete": "Delete"
+		},
+		"list": {
+			"title": "Usernotes",
+			"addNew": "Add new permission to the note",
+			"noData": "There are no usernotes in database",
+			"pageTitle": "List of usernotes"
+		},
+		"form": {
+			"title": "Permissions",
+			"add": {
+				"pageTitle": "Adding permissions"
+			},
+			"edit": {
+				"pageTitle": "Editing permissions"
+			},
+			"details": {
+				"pageTitle": "Usernote details"
+			}
+		},
+		"errors": {
+			"user": {
+				"notEmpty": ""
+			},
+			"note": {
+				"notEmpty": ""
+			}
+		}
+	},
+	"user": {
+		"title": "User ",
+		"fields": {
+			"firstname": "Firstname",
+			"lastname": "Lastname",
+			"username": "Username",
+			"email": "Email",
+			"password": "Password"
+		},
+		"list": {
+			"title": "Users",
+			"addNew": "Add a new user",
+			"noData": "There are no users in database",
+			"pageTitle": "List of users"
+		},
+		"form": {
+			"title": "User permissions for notes",
+			"add": {
+				"pageTitle": "Adding a new user"
+			},
+			"edit": {
+				"pageTitle": "Editing a user"
+			},
+			"details": {
+				"pageTitle": "User details"
+			}
+		},
+		"errors": {
+			"username": {
+				"notEmpty": "Username is required",
+				"len": "Username should contain 2-30 characters"
+			},
+			"password": {
+				"notEmpty": "Password is required",
+				"len": "Password should contain 7-42 characters"
+			},
+			"email": {
+				"notEmpty": "Email is required",
+				"len": "Email should contain 5-30 characters",
+				"isEmail": "Field should contain valid email address"
+			},
+			"firstname": {
+				"notEmpty": "Firstname is required",
+				"len": "Firstname should contain 2-30 characters",
+				"isFirstLetterUppercased": "First letter should be uppercased"
+			},
+			"lastname": {
+				"notEmpty": "Lastname is required",
+				"len": "Lastname should contain 2-30 characters",
+				"isFirstLetterUppercased": "First letter should be uppercased"
+			}
+		}
+	}
+}

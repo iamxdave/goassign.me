@@ -8,7 +8,6 @@ console.log(port);
 console.log(rootPassword);
 const sequelize = new Sequelize('goassign-me', 'root', rootPassword, {
     dialect: 'mysql',
-    host: 'localhost',
     port: port
 });
 

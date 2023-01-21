@@ -1,6 +1,7 @@
 const User = require('../models/User');
 const Note = require('../models/Note');
 const Usernote = require('../models/Usernote');
+const auth = require('../utils/auth');
 
 exports.getUsers = () => {
     return User.findAll();
@@ -20,10 +21,24 @@ exports.getUserById = (id) => {
         });
 };
 
+exports.getUserByEmail = (email) => {
+    return User.findOne({
+        where: { email: email},
+        include: [{
+            model: Usernote,
+            as: 'usernotes',
+            include: [{
+                model: Note,
+                as: 'note'
+            }]
+        }]
+    })
+}
+
 exports.createUser = (body) => {
     return User.create({
         username: body.username,
-        password: body.password,
+        password: auth.hashPassword(body.password),
         email: body.email,
         firstname: body.firstname,
         lastname: body.lastname
@@ -31,6 +46,8 @@ exports.createUser = (body) => {
 }
 
 exports.updateUser = (id, body) => {
+    if(body.password)
+        body.password = auth.hashPassword(body.password);
     return User.update(body, {where: {_id: id}});
 };
 

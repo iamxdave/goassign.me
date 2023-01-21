@@ -12,9 +12,8 @@ exports.addNote = (req, res, next) => {
             res.render('pages/notes/form', {
                 note: data,
                 oldNote: {},
-                title: 'New note',
+                title: req.__('note.form.add.pageTitle'),
                 mode: 'create',
-                btn: 'Add',
                 action: '/notes/add',
                 navLocation: 'Note',
                 errors: err.errors
@@ -34,11 +33,10 @@ exports.updateNote = (req, res, next) => {
                 res.render('pages/notes/form', { 
                     note: data,
                     oldNote: note,
-                    title: 'Edit note',
+                    title: req.__('note.form.edit.pageTitle'),
                     mode: 'edit',
-                    btn: 'Confirm',
                     action: '/notes/edit',
-                    navLocation: 'Note',
+                    navLocation: req.__('note.title'),
                     errors: err.errors
                 });
             })
@@ -56,7 +54,7 @@ exports.showNotes = (req, res, next) => {
     .then(notes => {
         res.render('pages/notes/list', {
             notes: notes,
-            navLocation: 'Note' 
+            navLocation: req.__('note.title'),
         });
     })
 }
@@ -65,11 +63,10 @@ exports.showNoteAdd = (req, res, next) => {
     res.render('pages/notes/form', {
         note: { creation: convertDate() },
         oldNote: {},
-        title: 'New note',
+        title: req.__('note.form.add.pageTitle'),
         mode: 'create',
-        btn: 'Add',
         action: '/notes/add',
-        navLocation: 'Note',
+        navLocation: req.__('note.title'),
         errors: []
     });
 }
@@ -80,11 +77,10 @@ exports.showNoteEdit = (req, res, next) => {
         res.render('pages/notes/form', { 
             note: note,
             oldNote: note,
-            title: 'Edit note',
+            title: req.__('note.form.edit.pageTitle'),
             mode: 'edit',
-            btn: 'Confirm',
             action: '/notes/edit',
-            navLocation: 'Note',
+            navLocation: req.__('note.title'),
             errors: []
         });
     })
@@ -96,10 +92,10 @@ exports.showNoteDetails = (req, res, next) => {
         res.render('pages/notes/form', { 
             note: note,
             oldNote: note,
-            title: 'Note details',
+            title: req.__('note.form.details.pageTitle'),
             mode: 'details',
             action: '',
-            navLocation: 'Note',
+            navLocation: req.__('note.title'),
             errors: [] 
         });
     })

@@ -372,7 +372,7 @@ textarea {
 
 .form {
     display: grid;
-    grid-template-columns: 100px 350px 1fr;
+    grid-template-columns: 110px 340px 1fr;
     align-items: center;
     gap: 2rem;
 }

@@ -2,21 +2,21 @@
     <main>
         <div class="main-divider">
             <section>
-                <h2>Usernotes</h2>
+                <h2><%=__('usernote.list.title')%></h2>
                 <% if(usernotes == null || usernotes.length == 0) { %>
-                    <h3>There are no usernotes</h3>
+                    <h3><%=__('user.list.noData')%></h3>
                 <% } else { %>
                     <table class="table-list">
                         <thead>
                             <tr>
-                                <th rowspan="2">User</th>
-                                <th rowspan="2">Note title</th>
-                                <th colspan="2">Permissions</th>
-                                <th rowspan="2" class="display">Actions</th>
+                                <th rowspan="2"><%=__('user.fields.username')%></th>
+                                <th rowspan="2"><%=__('note.fields.title')%></th>
+                                <th colspan="2"><%=__('usernote.list.title')%></th>
+                                <th rowspan="2" class="display"><%=__('list.actions.title')%></th>
                             </tr>
                             <tr>
-                                <th>Write</th>
-                                <th>Delete</th>
+                                <th><%=__('usernote.fields.write')%></th>
+                                <th><%=__('usernote.fields.delete')%></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -32,18 +32,18 @@
                                     </td>
                                     <td class="display">
                                         <ul class="list-actions">
-                                            <li><a href="usernotes/details/<%= usernote._id %>" class="list-actions-button-details">Details</a></li>
-                                            <li><a href="usernotes/edit/<%= usernote._id %>" class="list-actions-button-edit">Edit</a></li>
-                                            <li><a href="usernotes/delete/<%= usernote._id %>" class="list-actions-button-delete">Delete</a></li>
+                                            <li><a href="usernotes/details/<%= usernote._id %>" class="list-actions-button-details"><%=__('list.actions.details')%></a></li>
+                                            <li><a href="usernotes/edit/<%= usernote._id %>" class="list-actions-button-edit"><%=__('list.actions.edit')%></a></li>
+                                            <li><a href="usernotes/delete/<%= usernote._id %>" class="list-actions-button-delete"><%=__('list.actions.delete')%></a></li>
                                         </ul>
                                     </td>
                                 </tr>
                                 <tr class="display-small">
-                                    <td colspan="4">
+                                    <td colspan="2">
                                         <ul class="list-actions">
-                                            <li><a href="usernotes/details/<%= usernote._id %>" class="list-actions-button-details">Details</a></li>
-                                            <li><a href="usernotes/edit/<%= usernote._id %>" class="list-actions-button-edit">Edit</a></li>
-                                            <li><a href="usernotes/delete/<%= usernote._id %>" class="list-actions-button-delete">Delete</a></li>
+                                            <li><a href="usernotes/details/<%= usernote._id %>" class="list-actions-button-details"><%=__('list.actions.details')%></a></li>
+                                            <li><a href="usernotes/edit/<%= usernote._id %>" class="list-actions-button-edit"><%=__('list.actions.edit')%></a></li>
+                                            <li><a href="usernotes/delete/<%= usernote._id %>" class="list-actions-button-delete"><%=__('list.actions.delete')%></a></li>
                                         </ul>
                                     </td>
                                 </tr>
@@ -52,7 +52,7 @@
                     </table>
                 <% } %> 
                 <div class="form-buttons">
-                    <a href="usernotes/add" class="button-add">Add user to the note</a>
+                    <a href="usernotes/add" class="button-add"><%=__('usernote.list.addNew')%></a>
                 </div>
             </section>
         </div>

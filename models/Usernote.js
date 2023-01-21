@@ -21,7 +21,7 @@ const Usernote = sequelize.define('Usernote', {
         allowNull: false,
         validate: {
             notEmpty: {
-                msg: "User is required"
+                msg: "usernote.errors.user.notEmpty"
             }
         }
     },
@@ -30,7 +30,7 @@ const Usernote = sequelize.define('Usernote', {
         allowNull: false,
         validate: {
             notEmpty: {
-                msg: "Note is required"
+                msg: "usernote.errors.note.notEmpty"
             }
         }
     },

@@ -6,39 +6,50 @@
                 <form class="form form-larger" method="post" action="<%= action %>" novalidate onsubmit="return validateForm();">
                     <input type="hidden" name="_id" value="<%= note._id %>"> 
                     
-                    <label for="title">Title: <span class="symbol-required">*</span></label>
+                    <label for="title"><%=__('note.fields.title')%>: <span class="symbol-required">*</span></label>
                     <input type="text" name="title" id="title" value="<%= note.title %>" <%= (mode == 'details')? 'disabled' : '' %> class="<%=(errors.find(e => e.path.includes('title')))? 'error-input' : '' %>">
                     <span id="errorTitle" class="errors-text">
+                        <div style="display: none">
+                            <span id="titleMsgNotEmpty"><%= __('note.errors.title.notEmpty') %></span>
+                            <span id="titleMsgLen"><%= __('note.errors.title.len') %></span>
+                        </div>
                         <% if (errors.find(e => e.path.includes('title'))) { %>
-                            <%= errors.find(e => e.path.includes('title')).message %>
+                            <%= __(errors.find(e => e.path.includes('title')).message) %>
                         <% } %>
                     </span>
                 
-                    <label for="creation">Creation:</label>
+                    <label for="creation"><%=__('note.fields.creation')%>:</label>
                     <input type="date" name="creation" id="creation" value="<%= note.creation %>" readonly>
 
-                    <label for="implementation">Implementation:</label>
+                    <label for="implementation"><%=__('note.fields.implementation')%>:</label>
                     <input type="date" name="implementation" id="implementation"  value="<%= note.implementation %>" min="<%= note.creation %>" <%= (mode == 'details')? 'disabled' : '' %>>
                 
-                    <label for="description">Description: <span class="symbol-required">*</span></label>
+                    <label for="description"><%=__('note.fields.description')%>: <span class="symbol-required">*</span></label>
                     <textarea name="description" id="description" cols="30" rows="10" <%= (mode == 'details')? 'disabled' : '' %> class="<%=(errors.find(e => e.path.includes('description')))? 'error-input' : '' %>"><%= note.description %></textarea>
                     <span id="errorDescription" class="errors-text">
+                        <div style="display: none">
+                            <span id="descriptionMsgNotEmpty"><%= __('note.errors.description.notEmpty') %></span>
+                            <span id="descriptionMsgLen"><%= __('note.errors.description.len') %></span>
+                        </div>
                         <% if (errors.find(e => e.path.includes('description'))) { %>
-                            <%= errors.find(e => e.path.includes('description')).message %>
+                            <%= __(errors.find(e => e.path.includes('description')).message) %>
                         <% } %>
                     </span>
-                    <p id="errorSummary" class="errors-text <%=(errors.find(e => e))? '' : 'hidden-error' %>">Form contains errors</p>
+                    <div style="display: none">
+                        <span id="summaryMsg"><%= __('errors.form') %></span>
+                    </div>
+                    <p id="errorSummary" class="errors-text <%=(errors.find(e => e))? '' : 'hidden-error' %>"><%=__('errors.form')%></p>
                     
                     <div class="form-buttons">
                         <% if (mode == 'details') { %>
-                            <a href="/notes/edit/<%= note._id %>" class="form-button-submit">Edit</a>
+                            <a href="/notes/edit/<%= note._id %>" class="form-button-submit"><%=__('form.actions.edit')%></a>
                         <% } %>
                         <% if (mode == 'edit') { %>
-                            <input type="submit" value="<%= btn %>" class="form-button-submit">
+                            <input type="submit" value="<%=__('form.actions.confirm')%>" class="form-button-submit">
                         <% } %>
                         <% if (mode == 'create') { %> 
-                            <input type="submit" value="<%= btn %>" class="form-button-submit">
-                            <a href="/notes" class="form-button-cancel">Decline</a>
+                            <input type="submit" value="<%=__('form.actions.add')%>" class="form-button-submit">
+                            <a href="/notes" class="form-button-cancel"><%=__('form.actions.cancel')%></a>
                         <% } %>
                     </div>
                 </form>
@@ -47,17 +58,17 @@
         <% if (mode == 'details' || mode == 'edit') { %>
             <div class="main-divider">
                 <section>
-                    <h2>User permissions for the note</h2>
+                    <h2><%=__('note.form.title')%></h2>
                     <table class="table-list table-permission">
                         <thead>
                             <tr>
-                                <th rowspan="2">User</th>
-                                <th rowspan="2" class="display">Email</th>
-                                <th colspan="2">Permissions</th>
+                                <th rowspan="2"><%=__('user.fields.username')%></th>
+                                <th rowspan="2" class="display"><%=__('user.fields.email')%></th>
+                                <th colspan="2"><%=__('usernote.form.title')%></th>
                             </tr>
                             <tr>
-                                <th>Write</th>
-                                <th>Delete</th>
+                                <th><%=__('usernote.fields.write')%></th>
+                                <th><%=__('usernote.fields.delete')%></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -79,7 +90,7 @@
                         </tbody>
                     </table>       
                     <div class="form-buttons">
-                        <a href="/notes" class="form-button-cancel">Back</a>
+                        <a href="/notes" class="form-button-cancel"><%=__('form.actions.return')%></a>
                     </div>
                 </section>
             </div>

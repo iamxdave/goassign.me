@@ -13,11 +13,11 @@ const Note = sequelize.define('Note', {
         allowNull: false,
         validate: {
             notEmpty: {
-                msg: "Title is required"
+                msg: "note.errors.title.notEmpty"
             },
             len: {
                 args: [5,80],
-                msg: "Title should contain 5-80 characters"
+                msg: "note.errors.title.len"
             }
         }
     },
@@ -34,11 +34,11 @@ const Note = sequelize.define('Note', {
         allowNull: false,
         validate: {
             notEmpty: {
-                msg: "Description is required"
+                msg: "note.errors.description.notEmpty"
             },
             len: {
                 args: [5,400],
-                msg: "Description should contain 5-400 characters"
+                msg: "note.errors.description.len"
             }
         }
     },

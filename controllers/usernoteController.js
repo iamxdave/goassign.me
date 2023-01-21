@@ -27,13 +27,12 @@ exports.addUsernote = (req, res, next) => {
                 console.log(data);
                 res.render('pages/usernotes/form', {
                     usernote: data,
-                    title: 'Add user permissions',
+                    title: req.__('usernote.form.add.pageTitle'),
                     allUsers: allUsers,
                     allNotes: allNotes,
                     mode: 'create',
-                    btn: 'Add',
                     action: '/usernotes/add',
-                    navLocation: 'Usernote', 
+                    navLocation: req.__('usernote.title'),
                     errors: e
                 });
             })
@@ -70,13 +69,12 @@ exports.updateUsernote = (req, res, next) => {
                     .then(usernote => {
                         res.render('pages/usernotes/form', {
                             usernote: data,
-                            title: 'Edit usernote',
+                            title: req.__('usernote.form.edit.pageTitle'),
                             allUsers: allUsers,
                             allNotes: allNotes,
                             mode: 'edit',
-                            btn: 'Confirm',
                             action: '/usernotes/edit',
-                            navLocation: 'Usernote', 
+                            navLocation: req.__('usernote.title'),
                             errors: e
                         });
                     })
@@ -98,7 +96,7 @@ exports.showUsernotes = (req, res, next) => {
     .then(usernotes => {
         res.render('pages/usernotes/list', {
             usernotes: usernotes,
-            navLocation: 'Usernote'
+            navLocation: req.__('usernote.title'),
         });
     })
 }
@@ -115,13 +113,12 @@ exports.showUsernoteAdd = (req, res, next) => {
             allNotes = notes;
             res.render('pages/usernotes/form', {
                 usernote: {},
-                title: 'Add user permissions',
+                title: req.__('usernote.form.add.pageTitle'),
                 allUsers: allUsers,
                 allNotes: allNotes,
                 mode: 'create',
-                btn: 'Add',
                 action: '/usernotes/add',
-                navLocation: 'Usernote',
+                navLocation: req.__('usernote.title'),
                 errors: [] 
             });
         })
@@ -140,13 +137,12 @@ exports.showUsernoteEdit = (req, res, next) => {
                 .then(usernote => {
                     res.render('pages/usernotes/form', { 
                         usernote: usernote,
-                        title: 'Edit usernote',
+                        title: req.__('usernote.form.edit.pageTitle'),
                         allUsers: allUsers,
                         allNotes: allNotes,
                         mode: 'edit',
-                        btn: 'Confirm',
                         action: '/usernotes/edit',
-                        navLocation: 'Usernote',
+                        navLocation: req.__('usernote.title'),
                         errors: [] 
                     });
                 });
@@ -167,12 +163,12 @@ exports.showUsernoteDetails = (req, res, next) => {
                 .then(usernote => {
                     res.render('pages/usernotes/form', { 
                         usernote: usernote,
-                        title: 'Usernote details',
+                        title: req.__('usernote.form.details.pageTitle'),
                         allUsers: allUsers,
                         allNotes: allNotes,
                         mode: 'details',
                         action: '',
-                        navLocation: 'Usernote',
+                        navLocation: req.__('usernote.title'),
                         errors: []
                     });
                 });

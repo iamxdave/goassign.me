@@ -2,6 +2,7 @@ const UserRepository = require('../repositories/UserRepository');
 
 exports.addUser = (req, res, next) => {
     const data = { ...req.body };
+
     UserRepository.createUser(data)
         .then(result => res.redirect('/users'))
         .catch(err => {
@@ -16,11 +17,10 @@ exports.addUser = (req, res, next) => {
             res.render('pages/users/form', {
                 user: data,
                 oldUser: {},
-                title: 'New user',
+                title: req.__('user.form.add.pageTitle'),
                 mode: 'create',
-                btn: 'Add',
                 action: '/users/add',
-                navLocation: 'User',
+                navLocation: req.__('user.title'),
                 errors: err.errors
             });
         });
@@ -47,11 +47,10 @@ exports.updateUser = (req, res, next) => {
                 res.render('pages/users/form', { 
                     user: data,
                     oldUser: user,
-                    title: 'Edit user',
+                    title: req.__('user.form.edit.pageTitle'),
                     mode: 'edit',
-                    btn: 'Confirm',
                     action: '/users/edit',
-                    navLocation: 'User', 
+                    navLocation: req.__('user.title'),
                     errors: err.errors
                 });
             })
@@ -68,7 +67,7 @@ exports.showUsers = (req, res, next) => {
     .then(users => {
         res.render('pages/users/list', {
             users: users,
-            navLocation: 'User' 
+            navLocation: req.__('user.title'),
         });
     })
 }
@@ -77,11 +76,10 @@ exports.showUserAdd = (req, res, next) => {
     res.render('pages/users/form', {
         user: {},
         oldUser: {},
-        title: 'New user',
+        title: req.__('user.form.add.pageTitle'),
         mode: 'create',
-        btn: 'Add',
         action: '/users/add',
-        navLocation: 'User',
+        navLocation: req.__('user.title'),
         errors: [] 
     });
 }
@@ -92,11 +90,10 @@ exports.showUserEdit = (req, res, next) => {
         res.render('pages/users/form', { 
             user: user,
             oldUser: user,
-            title: 'Edit user',
+            title: req.__('user.form.edit.pageTitle'),
             mode: 'edit',
-            btn: 'Confirm',
             action: '/users/edit',
-            navLocation: 'User',
+            navLocation: req.__('user.title'),
             errors: [] 
         });
     })
@@ -108,10 +105,10 @@ exports.showUserDetails = (req, res, next) => {
         res.render('pages/users/form', { 
             user: user,
             oldUser: user,
-            title: 'User details',
+            title: req.__('user.form.details.pageTitle'),
             mode: 'details',
             action: '',
-            navLocation: 'User',
+            navLocation: req.__('user.title'),
             errors: [] 
         });
     })

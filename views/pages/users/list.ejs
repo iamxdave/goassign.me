@@ -3,16 +3,16 @@
 <main>
     <div class="main-divider">
         <section>
-            <h2>Users</h2>
+            <h2><%=__('user.list.title')%></h2>
             <% if(users == null || users.length == 0) { %>
-                <h3>There are no users</h3>
+                <h3><%=__('user.list.noData')%></h3>
             <% } else { %>
                 <table class="table-list">
                     <thead>
                         <tr>
-                            <th>User</th>
-                            <th>Email</th>
-                            <th class="display">Actions</th>
+                            <th><%=__('user.fields.username')%></th>
+                            <th><%=__('user.fields.email')%></th>
+                            <th class="display"><%=__('list.actions.title')%></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -22,18 +22,18 @@
                                 <td><%= user.email %></td>
                                 <td class="display">
                                     <ul class="list-actions">
-                                        <li><a href="users/details/<%= user._id %>" class="list-actions-button-details">Details</a></li>
-                                        <li><a href="users/edit/<%= user._id %>" class="list-actions-button-edit">Edit</a></li>
-                                        <li><a href="users/delete/<%= user._id %>" class="list-actions-button-delete">Delete</a></li>
+                                        <li><a href="users/details/<%= user._id %>" class="list-actions-button-details"><%=__('list.actions.details')%></a></li>
+                                        <li><a href="users/edit/<%= user._id %>" class="list-actions-button-edit"><%=__('list.actions.edit')%></a></li>
+                                        <li><a href="users/delete/<%= user._id %>" class="list-actions-button-delete"><%=__('list.actions.delete')%></a></li>
                                     </ul>
                                 </td>
                             </tr>
                             <tr class="display-small">
                                 <td colspan="2">
                                     <ul class="list-actions">
-                                        <li><a href="users/details/<%= user._id %>" class="list-actions-button-details">Details</a></li>
-                                        <li><a href="users/edit/<%= user._id %>" class="list-actions-button-edit">Edit</a></li>
-                                        <li><a href="users/delete/<%= user._id %>" class="list-actions-button-delete">Delete</a></li>
+                                        <li><a href="users/details/<%= user._id %>" class="list-actions-button-details"><%=__('list.actions.details')%></a></li>
+                                        <li><a href="users/edit/<%= user._id %>" class="list-actions-button-edit"><%=__('list.actions.edit')%></a></li>
+                                        <li><a href="users/delete/<%= user._id %>" class="list-actions-button-delete"><%=__('list.actions.delete')%></a></li>
                                     </ul>
                                 </td>
                             </tr>
@@ -42,7 +42,7 @@
                 </table>
             <% } %> 
             <div class="form-buttons">
-                <a href="users/add" class="button-add">Add new user</a>
+                <a href="users/add" class="button-add"><%=__('user.list.addNew')%></a>
             </div>
         </section>
     </div>

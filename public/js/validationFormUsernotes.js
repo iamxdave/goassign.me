@@ -3,9 +3,13 @@ function validateForm() {
     const noteInput = document.querySelector('#note');
 
     const userError = document.querySelector('#errorUser');
-    const noteError = document.querySelector('#errorNote');
-    const summaryError = document.querySelector("#errorSummary");
+    const reqUserNotEmpty = document.querySelector('#userMsgNotEmpty').innerText;
 
+    const noteError = document.querySelector('#errorNote');
+    const reqNoteNotEmpty = document.querySelector('#noteMsgNotEmpty').innerText;
+
+    const summaryError = document.querySelector("#errorSummary");
+    const reqSummary = document.querySelector('#summaryMsg').innerText;
 
     resetErrors([userInput, noteInput], [userError, noteError], summaryError);
     let valid = true;
@@ -13,17 +17,17 @@ function validateForm() {
     if(!checkRequired(userInput.value) || userInput.value == "default") {
         valid = false;
         userInput.classList.add("error-input");
-        userError.innerText = "User is required";
+        userError.innerText = reqUserNotEmpty;
     }
 
     if(!checkRequired(noteInput.value) || noteInput.value == "default") {
         valid = false;
         noteInput.classList.add("error-input");
-        noteError.innerText = "Note is required";
+        noteError.innerText = reqNoteNotEmpty;
     }
 
     if(!valid) {
-        summaryError.innerText = "Form contains errors";
+        summaryError.innerText = reqSummary;
         summaryError.classList.remove("hidden-error");
     }
 
