@@ -38,7 +38,7 @@ exports.getUserByEmail = (email) => {
 exports.createUser = (body) => {
     return User.create({
         username: body.username,
-        password: auth.hashPassword(body.password),
+        password: body.password,
         email: body.email,
         firstname: body.firstname,
         lastname: body.lastname
@@ -46,8 +46,6 @@ exports.createUser = (body) => {
 }
 
 exports.updateUser = (id, body) => {
-    if(body.password)
-        body.password = auth.hashPassword(body.password);
     return User.update(body, {where: {_id: id}});
 };
 
