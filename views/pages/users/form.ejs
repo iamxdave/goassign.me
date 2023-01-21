@@ -32,17 +32,17 @@
                     </span> 
                     
                     <% if(mode != 'details') { %>
-                    <label for="password"><%=__('user.fields.password')%>: <span class="symbol-required">*</span></label>
-                    <input type="password" name="password" id="password" <%= (mode == 'details')? 'disabled' : '' %> class="<%=(errors.find(e => e.path.includes('password')))? 'error-input' : '' %>">
-                    <span id="errorPassword" class="errors-text">
-                        <div style="display: none">
-                            <span id="passwordMsgNotEmpty"><%= __('user.errors.password.notEmpty') %></span>
-                            <span id="passwordMsgLen"><%= __('user.errors.password.len') %></span>
-                        </div>
-                        <% if (errors.find(e => e.path.includes('password'))) { %>
-                            <%= __(errors.find(e => e.path.includes('password')).message) %>
-                        <% } %>
-                    </span> 
+                        <label for="password"><%=__('user.fields.password')%>: <span class="symbol-required">*</span></label>
+                        <input type="password" name="password" id="password" <%= (mode == 'details')? 'disabled' : '' %> class="<%=(errors.find(e => e.path.includes('password')))? 'error-input' : '' %>">
+                        <span id="errorPassword" class="errors-text">
+                            <div style="display: none">
+                                <span id="passwordMsgNotEmpty"><%= __('user.errors.password.notEmpty') %></span>
+                                <span id="passwordMsgLen"><%= __('user.errors.password.len') %></span>
+                            </div>
+                            <% if (errors.find(e => e.path.includes('password'))) { %>
+                                <%= __(errors.find(e => e.path.includes('password')).message) %>
+                            <% } %>
+                        </span> 
                     <% } %>
 
                     <label for="firstname"><%=__('user.fields.firstname')%>: <span class="symbol-required">*</span></label>

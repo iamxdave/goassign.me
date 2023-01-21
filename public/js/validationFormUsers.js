@@ -1,6 +1,7 @@
 function validateForm() {
     const usernameInput = document.querySelector('#username');
     const emailInput = document.querySelector('#email');
+    const passwordInput = document.querySelector('#password');
     const firstnameInput = document.querySelector('#firstname');
     const lastnameInput = document.querySelector('#lastname');
 
@@ -12,6 +13,10 @@ function validateForm() {
     const reqEmailNotEmpty = document.querySelector('#emailMsgNotEmpty').innerText;
     const reqEmailLen = document.querySelector('#emailMsgLen').innerText;
     const reqEmailIsEmail = document.querySelector('#emailMsgIsEmail').innerText;
+
+    const passwordError = document.querySelector('#errorPassword');
+    const reqPasswordNotEmpty = document.querySelector('#passwordMsgNotEmpty').innerText;
+    const reqPasswordLen = document.querySelector('#passwordMsgLen').innerText;
 
     const firstnameError = document.querySelector('#errorFirstname');
     const reqFirstnameNotEmpty = document.querySelector('#firstnameMsgNotEmpty').innerText;
@@ -57,6 +62,16 @@ function validateForm() {
         valid = false;
         emailInput.classList.add("error-input");
         emailError.innerText = reqEmailIsEmail;
+    }
+
+    if(!checkRequired(passwordInput.value)) {
+        valid = false;
+        passwordInput.classList.add("error-input");
+        passwordError.innerText = reqPasswordNotEmpty;
+    } else if(!checkTextLengthRange(passwordInput.value, 7, 42)) {
+        valid = false;
+        passwordInput.classList.add("error-input");
+        passwordError.innerText = reqPasswordLen;
     }
 
     if(!checkRequired(firstnameInput.value)) {

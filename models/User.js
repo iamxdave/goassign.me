@@ -1,5 +1,6 @@
 const { Sequelize } = require('sequelize');
 const sequelize = require('../db/sequelize/sequelize');
+const auth = require('../utils/auth');
 
 const User = sequelize.define('User', {
     _id: {
@@ -28,12 +29,8 @@ const User = sequelize.define('User', {
         validate: {
             notEmpty: {
                 msg: "user.errors.password.notEmpty"
-            },
-            len: {
-                args: [7,42],
-                msg: "user.errors.password.len"
             }
-        }
+        },
     },
     email: {
         type: Sequelize.STRING,
@@ -87,6 +84,10 @@ const User = sequelize.define('User', {
             }
         }
     }
+});
+
+User.beforeCreate((user, options) => {
+    user.password = auth.hashPassword(user.password);
 });
 
 module.exports = User;

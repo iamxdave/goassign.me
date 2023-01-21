@@ -1,12 +1,44 @@
 {
 	"main-page": {
-		"content": "Strona główna"
+		"first": {
+			"h1": {
+				"part1": "Uzyskaj pełną przejrzystość dzięki jedynej platformie PM stworzonej dla ",
+				"part2": "pracy klienta"
+			},
+			"h3": "Wszystko, czego potrzebujesz do zarządzania projektami, zespołami i notatkami w jednym miejscu"
+		},
+		"second": {
+			"h2": "Zarządzaj z łatwością wieloma złożonymi projektami",
+			"artictle": {
+				"h3": "Natychmiast wiedz, co jest na twojej drodze, a co za nią"
+			}
+		},
+		"third": {
+			"h2": {
+				"part1": "Proste w użyciu rozwiązanie, ",
+				"part2": "potężne w twoich rękach,",
+				"part3": " dostępne kiedy tego potrzebujesz"
+			},
+			"artictle": {
+				"h3": "Wszystkie niezbędne narzędzia do zarządzania projektami"
+			}
+		},
+		"fourth": {
+			"h2": "Po prostu spróbuj! Spodoba ci się",
+			"h3": {
+				"part1": "Spróbuj ",
+				"part2": " za darmo. Płatności nie są wymagane, nie ma żadnych podstępów."
+			}
+		}
 	},
 	"nav": {
+		"main-page": "Strona główna",
 		"notes": "Notatki",
 		"usernotes": "Notatki użytkowników",
 		"users": "Użytkownicy",
-		"login": "Zaloguj"
+		"login": "Zaloguj",
+		"logout": "Wyloguj",
+		"greeting": "Witaj"
 	},
 	"list": {
 		"actions": {
@@ -29,6 +61,7 @@
 	"errors": {
 		"form": "Formularz zawiera błędy"
 	},
+	"footer": {},
 	"note": {
 		"title": "Notatka",
 		"fields": {
@@ -90,6 +123,10 @@
 			},
 			"details": {
 				"pageTitle": "Informacje o uprawnieniach"
+			},
+			"select": {
+				"user": "Wybierz użytkownika",
+				"note": "Wybierz notatkę"
 			}
 		},
 		"errors": {

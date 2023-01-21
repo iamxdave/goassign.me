@@ -8,7 +8,7 @@
 
                     <label for="user"><%=__('usernote.fields.user')%>: <span class="symbol-required">*</span></label>
                     <select name="user" id="user" required <%= (mode == 'details')? 'disabled' : '' %> class="<%=(errors.find(e => e.name == 'user'))? 'error-input' : '' %>">
-                        <option value="default">-- Select user --</option>
+                        <option value="default">-- <%=__('usernote.form.select.user')%> --</option>
                         <% for (let u of allUsers) { %>
                             <option value="<%= u._id %>" label="<%= u.username %>"
                                 <% if(errors.find(e => e)) { %>
@@ -29,7 +29,7 @@
                     
                     <label for="note"><%=__('usernote.fields.note')%>: <span class="symbol-required">*</span></label>
                     <select name="note" id="note" required <%= (mode == 'details')? 'disabled' : ''%> class="<%=(errors.find(e => e.name == 'note'))? 'error-input' : '' %>">
-                        <option value="default">-- Select note --</option>
+                        <option value="default">-- <%=__('usernote.form.select.note')%> --</option>
                         <% for (let n of allNotes) { %>
                             <option value="<%= n._id %>" label="<%= n.title %>"
                                 <% if(errors.find(e => e)) { %>

@@ -14,15 +14,15 @@ body {
     margin: 0;
 }
 
-body, header, .main-divider, footer, section, article, .container, .container .access, .container .info {
+body, .main-divider, footer, section, article, .container-footer, .container-footer .info {
     display: flex;
 }
 
-body, header, .main-divider, footer {
+body, .main-divider, footer {
     justify-content: center;
 }
 
-.container {
+.container-footer {
     justify-content: space-between;
 }
 header, .main-divider, footer {
@@ -35,10 +35,25 @@ header, footer {
     font-size: 14px;
     color: #1E1d3A;
 }
-.container {
-    width: 85vw;
+
+header {
+    display: grid;
+    grid-template-columns: 1.5fr 7fr 1.5fr;
+    align-items: center;
+    justify-items: center;
+    gap: 2rem;
 }
-.main-divider {
+.container-header {
+    display: flex;
+    width: inherit;
+    justify-content: space-between;
+}
+
+.container-header, .container-footer .info {
+    align-items: center;
+}
+
+.main-divider, .container-footer {
     width: 70vw;
 }
 
@@ -60,6 +75,10 @@ article {
     text-align: left;
 }
 
+section, article {
+    text-align: justify;
+    text-justify: inter-word;
+}
 section img {
     max-width: 30vw;
 }
@@ -68,26 +87,20 @@ article div {
     padding: 0 2rem;
 }
 
-.container .access {
-    align-items: center;
+article h3 {
+    margin-top: 0;
 }
-.container .langs {
+
+.container-header .langs {
     margin: 0rem;
 }
 
-.container, .container .info {
-    align-items: center;
-}
-.container div {
-    margin: 0 2rem;
-}
-
-.container div.info{
+.container-footer div.info{
     display: flex;
     
 }
 
-.container div.info div{
+.container-footer div.info div{
     margin: 0rem 2rem;
 }
 
@@ -118,20 +131,28 @@ nav {
     background: transparent;
 }
 
-.container .langs ul,
+.container-header .langs ul,
 nav ul {
     display: flex;
     list-style-type: none;
     padding: 0;
 }
 
-.container .langs ul li a,
+.container-header .langs ul li a,
 nav ul li a {
     display: inline-block;
     margin: 1rem;
     text-decoration: none;
 }
-
+.container-header .user div p{
+    margin: 0;
+}
+.container-header .user a {
+    text-decoration: none;
+}
+.container-header .user .span-hello {
+    font-style: italic;
+}
 main {
     display: flex;
     flex: 1;
@@ -484,51 +505,43 @@ textarea {
     display: none;
 }
 
-/* The alert message box */
-.alert {
-    padding: 20px;
-    background-color: #27ae60;
-    color: white;
-    border-radius: 5px;
-    margin-bottom: 15px;
-  }
-/* The close button */
-.closebtn {
-margin-left: 15px;
-color: white;
-font-weight: bold;
-float: right;
-font-size: 22px;
-line-height: 20px;
-cursor: pointer;
-transition: 0.3s;
-}
-
-/* When moving the mouse over the close button */
-.closebtn:hover {
-color: black;
-}
-
 @media all and (max-width: 1400px) {
     section {
         min-width: 95%;
     }
-    .container, main {
+    header {
+        grid-template-columns: 1.5fr 8.5fr 0.5fr;
+    }
+    .container-header ul li a {
+        margin: 0.7rem;
+    }
+    .container-header, .container-footer, main {
         min-width: 85%;
     }
 }
 @media all and (max-width: 1200px) {
-    header .container {
+    header {
+        display: flex;
         flex-direction: column;
-        margin-top: 1rem;
+        gap: 0;
     }
     header h1{
         text-align: center;
     }
     header img{
-        align-self: center;
+        margin-top: 1rem;
         max-width: 250px;
         min-width: 250px;
+    }
+    header .container-header {
+        width: 85%;
+    }
+    .container-header ul li a {
+        margin: 0.5rem;
+        white-space: nowrap;
+    }
+    .container-header .langs ul li a{
+        margin: 0.5rem;
     }
     article {
         flex-direction: column;
@@ -550,6 +563,25 @@ color: black;
 }
 
 @media all and (max-width: 992px) {
+    .container-header {
+        flex-direction: column;
+        margin-bottom: 1rem;
+    }
+    .container-header .btn-style {
+        width: inherit;
+        display:block;
+    }
+    .container-header .langs ul li a{
+        margin: 0rem 0.5rem;
+    }
+    .container-header .user {
+        display: flex;
+        gap: 1rem;
+    }
+    .span-hello {
+        align-self: center;
+        font-size: large;
+    }
     .list-actions li {
         display: block;
         margin: 0.5rem 0rem;
@@ -557,10 +589,10 @@ color: black;
     .list-actions {
         min-width: 150px;
     }
-    .container div {
+    .container-footer div {
         margin: 0 1rem;
     }   
-    .container div.info div{
+    .container-footer div.info div{
         margin: 0rem 1rem;
     }
     .table-list th, .table-list td {
@@ -569,7 +601,7 @@ color: black;
 }
 
 @media all and (max-width: 768px) {
-    .container, main {
+    .container-header, .container-footer, main {
         min-width: 95%;
     }
     header img{
@@ -619,12 +651,15 @@ color: black;
     .list-actions-button-edit {
         margin: 0rem 0.5rem;
     }
-    .container, main {
+    .container-header, .container-footer, main {
         margin: 0.5rem 0rem;
         min-width: 97%;
     }
+    .container-header .user {
+        margin-top: 0.5rem;
+    }
     .main-divider {
-        margin: 0rem;
+        margin: 0.2rem 0rem;
     }
     .table-list {
         font-size: 90%;
@@ -648,7 +683,7 @@ color: black;
         padding: 0.5rem 3rem;
         margin: 0.5rem;
     }
-    .container div {
+    .container-header div, .container-footer div {
         margin: 0;
     }
     h1 {

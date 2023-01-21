@@ -1,12 +1,44 @@
 {
 	"main-page": {
-		"content": "Main Page"
+		"first": {
+			"h1": {
+				"part1": "Get complete clarity with the only PM platform built for ",
+				"part2": "client work"
+			},
+			"h3": "Everything you need to manage projects, teams and notes in one place"
+		},
+		"second": {
+			"h2": "Manage multiple complex projects with ease",
+			"artictle": {
+				"h3": "Instantly know what's on and off track"
+			}
+		},
+		"third": {
+			"h2": {
+				"part1": "Simple to use, ",
+				"part2": "powerful in your hands,",
+				"part3": " available when you need it"
+			},
+			"artictle": {
+				"h3": "All the project management essentials you need"
+			}
+		},
+		"fourth": {
+			"h2": "Just try it out! You’ll fall in love",
+			"h3": {
+				"part1": "Try ",
+				"part2": " for free. No credit card needed. No catches."
+			}
+		}
 	},
 	"nav": {
+		"main-page": "Main page",
 		"notes": "Notes",
 		"usernotes": "Usernotes",
 		"users": "Users",
-		"login": "Login"
+		"login": "Login",
+		"logout": "Log out",
+		"greeting": "Hello" 
 	},
 	"list": {
 		"actions": {
@@ -28,6 +60,9 @@
 	},
 	"errors": {
 		"form": "Form contains errors"
+	},
+	"footer": {
+
 	},
 	"note": {
 		"title": "Note",
@@ -91,6 +126,10 @@
 			"details": {
 				"pageTitle": "Usernote details"
 			}
+		},
+		"select": {
+			"user": "Select user",
+			"note": "Select note"
 		},
 		"errors": {
 			"user": {
