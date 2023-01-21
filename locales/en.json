@@ -5,7 +5,8 @@
 	"nav": {
 		"notes": "Notes",
 		"usernotes": "Usernotes",
-		"users": "Users"
+		"users": "Users",
+		"login": "Login"
 	},
 	"list": {
 		"actions": {
@@ -21,7 +22,8 @@
 			"edit": "Edit",
 			"cancel": "Cancel",
 			"add": "Add",
-			"confirm": "Confirm"
+			"confirm": "Confirm",
+			"login": "Login"
 		}
 	},
 	"errors": {
@@ -150,6 +152,13 @@
 				"len": "Lastname should contain 2-30 characters",
 				"isFirstLetterUppercased": "First letter should be uppercased"
 			}
+		}
+	},
+	"auth": {
+		"title": "Login",
+		"pageTitle": "Sign in",
+		"errors": {
+			"incorrect": "Incorrect email address or password"
 		}
 	}
 }

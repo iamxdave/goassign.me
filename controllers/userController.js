@@ -8,10 +8,10 @@ exports.addUser = (req, res, next) => {
         .catch(err => {
             err.errors.forEach(e => {
                 if(e.path.includes('username') && e.type == 'unique violation') {
-                    e.message = "Username is already used"
+                    e.message = req.__('user.errors.username.alreadyUsed')
                 }
                 if(e.path.includes('email') && e.type == 'unique violation') {
-                    e.message = "Email is already used"
+                    e.message = req.__('user.errors.email.alreadyUsed')
                 }
             })
             res.render('pages/users/form', {
@@ -36,10 +36,10 @@ exports.updateUser = (req, res, next) => {
         .catch(err => {
             err.errors.forEach(e => {
                 if(e.path.includes('username') && e.type == 'unique violation') {
-                    e.message = "Username is already used"
+                    e.message = req.__('user.errors.username.alreadyUsed')
                 }
                 if(e.path.includes('email') && e.type == 'unique violation') {
-                    e.message = "Email is already used"
+                    e.message = req.__('user.errors.email.alreadyUsed')
                 }
             })
            UserRepository.getUserById(data._id)

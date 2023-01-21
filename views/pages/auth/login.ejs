@@ -1,0 +1,24 @@
+<%- include('../../partials/header') %>
+<main>
+    <div class="main-divider">
+        <section>
+            <h2><%= title %></h2>           
+            <div id="login">
+                <form class="form" method="post" action="/login" novalidate>
+                    <label for="loginEmail">Email:</label>
+                    <input type="email" id="loginEmail" name="email">
+                    
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" name="password">
+
+                    <p id="loginErrors" class="errors-text"><%= loginError? loginError : ''%></p>
+                    
+                    <input class="form-button-submit" type="submit" value="<%= __('form.actions.login') %>">
+                </form>
+            </div>
+        </section>
+    </div>
+</main>
+<script type="application/javascript" src="/js/validationCommon.js"></script>
+<script type="application/javascript" src="/js/validationFormNotes.js"></script>
+<%- include('../../partials/footer') %>

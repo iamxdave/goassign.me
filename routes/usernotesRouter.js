@@ -17,14 +17,4 @@ router.post('/edit', usernoteController.updateUsernote);
 
 router.get('/delete/:id', usernoteController.deleteUsernote);
 
-// router.get('/', usernoteController.getUsernotes);
-
-// router.get('/:id', usernoteController.getUsernoteById);
-
-// router.post('/', usernoteController.createUsernote);
-
-// router.put('/:id', usernoteController.updateUsernote);
-
-// router.delete('/:id', usernoteController.deleteUsernote);
-
 module.exports = router;

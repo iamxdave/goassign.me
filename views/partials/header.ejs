@@ -10,26 +10,41 @@
 <body>
     <header>
         <div class="container">
-            <div>              
-                <a href="/">
-                    <img src="/images/logo.gif" alt="Goassign.me logo" >
-                </a>
+            <div class="access"> 
+                <div>
+                    <div>              
+                        <a href="/">
+                            <img src="/images/logo.gif" alt="Goassign.me logo" >
+                        </a>
+                    </div>  
+                </div>
             </div>
-            <div>
-                <nav>
+            <div class="access"> 
+                <div class="langs">
                     <ul>
-                        <% if(loggedUser) { %>
-                            <li><a href="/users" class="<%= navLocation == 'User' ? 'btn-style-selected' : 'btn-style'%>"><%=__('nav.users')%></a></li>
-                            <li><a href="/usernotes" class="<%= navLocation == 'Usernote' ? 'btn-style-selected' : 'btn-style'%>"><%=__('nav.usernotes')%></a></li>
-                            <li><a href="/notes" class="<%= navLocation == 'Note' ? 'btn-style-selected' : 'btn-style'%>"><%=__('nav.notes')%></a></li>
-                        <% } %>
+                        <li><a href="/changeLang/pl" class="<%= lang == 'pl' ? 'active' : ''%>">PL</a></li>
+                        <li><a href="/changeLang/en" class="<%= lang == 'en' ? 'active' : ''%>">EN</a></li>
                     </ul>
-                </nav>
-                <ul>
-                    <li><a href="/changeLang/pl" class="<%= lang == 'pl' ? 'active' : ''%>">PL</a></li>
-                    <li><a href="/changeLang/en" class="<%= lang == 'en' ? 'active' : ''%>">EN</a></li>
-                </ul>
+                </div>
+                <div>
+                    <nav>
+                        <ul>
+                            <% if(loggedUser) { %>
+                                <li><a href="/users" class="<%= navLocation == 'User' ? 'btn-style-selected' : 'btn-style'%>"><%=__('nav.users')%></a></li>
+                                <li><a href="/usernotes" class="<%= navLocation == 'Usernote' ? 'btn-style-selected' : 'btn-style'%>"><%=__('nav.usernotes')%></a></li>
+                                <li><a href="/notes" class="<%= navLocation == 'Note' ? 'btn-style-selected' : 'btn-style'%>"><%=__('nav.notes')%></a></li>
+                            <% } else { %>
+                                <li><a href="/login" class="<%= navLocation == 'Login' ? 'btn-style-selected' : 'btn-style'%>"><%=__('nav.login')%></a></li>
+                            <% } %>
+                        </ul>
+                    </nav>
+                </div>
             </div>
+            <% if(loggedUser) { %>
+                <div class="access">
+                    <span><%=loggedUser.firstname + " " + loggedUser.lastname%></span>
+                    <a class='btn-style' href="/logout">Log out</a>  
+                </div>
+            <% } %>
         </div>
-        <%- include('../partials/login.ejs') %>
     </header>

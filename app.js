@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname + '/public')));
 app.use(express.urlencoded({ extended: false }))
 app.use(session({
     secret: 'password',
@@ -56,13 +56,14 @@ app.use((req, res, next) => {
 
 const auth = require('./utils/auth');
 const indexRouter = require("./routes/indexRouter");
+const authRouter = require("./routes/authRouter");
 const userRouter = require("./routes/usersRouter");
 const noteRouter = require("./routes/notesRouter");
 const usernoteRouter = require("./routes/usernotesRouter");
 
 
 const permit = auth.permitAuthenticatedUser;
-app.use('/', indexRouter);
+app.use('/', indexRouter, authRouter);
 app.use('/users', permit, userRouter);
 app.use('/notes', permit, noteRouter);
 app.use('/usernotes', permit, usernoteRouter);

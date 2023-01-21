@@ -5,7 +5,8 @@
 	"nav": {
 		"notes": "Notatki",
 		"usernotes": "Notatki użytkowników",
-		"users": "Użytkownicy"
+		"users": "Użytkownicy",
+		"login": "Zaloguj"
 	},
 	"list": {
 		"actions": {
@@ -21,7 +22,8 @@
 			"edit": "Edytuj",
 			"cancel": "Anuluj",
 			"add": "Dodaj",
-			"confirm": "Zatwierdź"
+			"confirm": "Zatwierdź",
+			"login": "Zaloguj"
 		}
 	},
 	"errors": {
@@ -129,7 +131,8 @@
 		"errors": {
 			"username": {
 				"notEmpty": "Nazwa używtkownika jest wymagana",
-				"len": "Nazwa użytkownika powinna zawierać 2-30 znaków"
+				"len": "Nazwa użytkownika powinna zawierać 2-30 znaków",
+				"alreadyUsed": "Nazwa użytkownika jest już zajęta"
 			},
 			"password": {
 				"notEmpty": "Hasło jest wymagane",
@@ -138,7 +141,8 @@
 			"email": {
 				"notEmpty": "Email jest wymagany",
 				"len": "Email powinien zawierać 5-30 znaków",
-				"isEmail": "Email powinien być prawidłowy"
+				"isEmail": "Email powinien być prawidłowy",
+				"alreadyUsed": "Email użytkownika jest już zajęty"
 			},
 			"firstname": {
 				"notEmpty": "Imię jest wymagane",
@@ -150,6 +154,13 @@
 				"len": "Nazwisko powinno zawierać 2-30 znaków",
 				"isFirstLetterUppercased": "Pierwsza litera powinna być wielka"
 			}
+		}
+	},
+	"auth": {
+		"title": "Logowanie",
+		"pageTitle": "Zaloguj się",
+		"errors": {
+			"incorrect": "Nieprawidłowy adres email lub hasło"
 		}
 	}
 }
