@@ -1,7 +1,7 @@
 <h1 align="center">Goassign.me</h1>
 <p align="center">
- Responsive REST <b>Javascript-CSS-HTML</b> web application to manage notes created by different users<br/>
- The application passed **w3c** HTML and CSS validation.
+ Responsive REST web application created by using <b>Javascript-CSS-HTML</b> to manage users' notes.<br/>
+ The application passed <b>w3c</b> HTML and CSS validation.
 </p>
 <br/>
 
@@ -32,15 +32,16 @@
 
 <!-- ABOUT -->
 ## About 🤔
-Application is the final result of the project to pass Information Technology classes at my university. This was created entirely by me based a little on a tutorial provided for the project<br/>
-While making the app, I was trying to think about future users and provide them easy, clean and comfortable experience.<br/>
+Application is the final result of the project to pass Information Technology classes at my university 🎓.</br> 
+This was created entirely by me 😁 based a little on a tutorial provided for the project<br/>
+While making the app, I was trying to think about future users 👥 and provide them easy, clean and comfortable experience.<br/>
 
 
 
 ### Built With 
 
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS), [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
-* [MongoDB](https://www.mongodb.com/docs/) with [Docker](https://docs.docker.com/get-started/)
+* [Mysql2](https://www.npmjs.com/package/mysql2) and [Docker](https://docs.docker.com/get-started/)
 
 <br/>
 
@@ -52,8 +53,17 @@ While making the app, I was trying to think about future users and provide them 
 * [Git](https://git-scm.com/) 
   * Follow the guide
     > https://github.com/git-guides/install-git
-* [Node.JS](https://nodejs.org/en/)
-* [Express.JS](https://expressjs.com/)
+* [Node.JS](https://nodejs.org/en/) and [Express.JS](https://expressjs.com/)
+ * Packages should be installed automatically, but in case they don't install nugget package manager and following packages
+  - ```bcryptjs```
+  - ```cookie-parser```
+  - ```dotenv```
+  - ```ejs```
+  - ```express```
+  - ```express-session```
+  - ```i18n```
+  - ```mysql2```
+  - ```sequelize```
 * [Docker](https://docs.docker.com/get-started/)
 
 
@@ -62,8 +72,7 @@ While making the app, I was trying to think about future users and provide them 
 ### Installation
 
 1. Use your command line and clone the repository:
-
- ```
+```
  git clone https://github.com/iamxdave/ScoreKeeper.git
 ```
 2. Go to the clonned folder: 
@@ -74,14 +83,18 @@ cd goassign.me
 ```
 npm -i
 ```
-4. Open the repository in any development environment
-5. Create database schema in phpmyadmin _localhost:8183_ using the script in _/db/sequalize/config/schema_ or copy it from below:
+4. Open the repository in any development environment </br>
+5. Create database schema in **phpmyadmin** _localhost:8183_ using the script in
 
-!IMPORTANT 
-**Login and password for the admin panel you can find in .env file**
+_/db/sequalize/config/schema_ 
+
+or copy it from below
 ```
 CREATE SCHEMA IF NOT EXISTS `goassign-me`;
 ```
+**Important!**
+_Login and password for the admin panel you can find in .env file_
+
 6. Enter db folder and run docker in terminal
 ```
 cd db
@@ -98,10 +111,10 @@ npm run start
 <!-- HOW DOES IT WORK-->
 ## How does it work 📔
 <p>
-  The application allows logged users to make notes and update existing ones to track their implementation progress.</br>
-  It also always current users to make accounts for new ones to share them board filled with notes.</br>
-  All passwords are hashed with **bcrypt** package and all data is restricted only for logged users.</br>
-  There are two implemented languages to choose from: PL and EN.</br>
+  The application allows logged users to make notes and update existing ones in order to track their implementation progress.</br>
+  It also always logged users to make accounts for new users to share them filled with notes board.</br>
+  All passwords are hashed with <b>bcrypt</b> package and all data is restricted only for logged users.</br>
+  Also there are two implemented languages to choose from: PL and EN.</br>
 </p>
   
 
@@ -112,9 +125,7 @@ npm run start
 
   _The application has only one page on which website redirect the user on start._
 
-![Main](https://user-images.githubusercontent.com/74014874/220412347-7e902f92-9ae7-44fa-8379-a51ade7102cf.png)
-
-  _A short gif of logging in and changing app language._
+  _A short gif of main page, logging in and changing app language._
   
 ![Login](https://user-images.githubusercontent.com/74014874/220417258-40f0f9c8-80ca-4233-ac0b-c5a2c1cd6e73.gif)
 
