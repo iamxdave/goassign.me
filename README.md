@@ -35,7 +35,7 @@
 <p align="justify">
   Application is the final result of the project to pass Information Technology classes at my university 🎓.
   This was created entirely by me 😁 based a little on a tutorial provided for the project.
-  While making the app, I was trying to think about future users 👥 and provide them easy, clean and comfortable experience.<br/>
+  While making the app, I was trying to think about future users 👥 and how to provide them easy, clean and comfortable experience.<br/>
 </p>
 
 
