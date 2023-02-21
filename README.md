@@ -32,10 +32,11 @@
 
 <!-- ABOUT -->
 ## About 🤔
-Application is the final result of the project to pass Information Technology classes at my university 🎓.</br> 
-This was created entirely by me 😁 based a little on a tutorial provided for the project<br/>
-While making the app, I was trying to think about future users 👥 and provide them easy, clean and comfortable experience.<br/>
-
+<p align="justify">
+  Application is the final result of the project to pass Information Technology classes at my university 🎓.
+  This was created entirely by me 😁 based a little on a tutorial provided for the project.
+  While making the app, I was trying to think about future users 👥 and provide them easy, clean and comfortable experience.<br/>
+</p>
 
 
 ### Built With 
@@ -54,16 +55,16 @@ While making the app, I was trying to think about future users 👥 and provide 
   * Follow the guide
     > https://github.com/git-guides/install-git
 * [Node.JS](https://nodejs.org/en/) and [Express.JS](https://expressjs.com/)
- * Packages should be installed automatically, but in case they don't install nugget package manager and following packages
-  - ```bcryptjs```
-  - ```cookie-parser```
-  - ```dotenv```
-  - ```ejs```
-  - ```express```
-  - ```express-session```
-  - ```i18n```
-  - ```mysql2```
-  - ```sequelize```
+  * Packages should be installed automatically, but in case they don't install nugget package manager and following packages
+    - ```bcryptjs```
+    - ```cookie-parser```
+    - ```dotenv```
+    - ```ejs```
+    - ```express```
+    - ```express-session```
+    - ```i18n```
+    - ```mysql2```
+    - ```sequelize```
 * [Docker](https://docs.docker.com/get-started/)
 
 
@@ -110,10 +111,10 @@ npm run start
 
 <!-- HOW DOES IT WORK-->
 ## How does it work 📔
-<p>
-  The application allows logged users to make notes and update existing ones in order to track their implementation progress.</br>
-  It also always logged users to make accounts for new users to share them filled with notes board.</br>
-  All passwords are hashed with <b>bcrypt</b> package and all data is restricted only for logged users.</br>
+<p align="justify">
+  The application allows logged users to make notes and update existing ones in order to track their implementation progress.
+  It also always logged users to make accounts for new users to share them filled with notes board.
+  All passwords are hashed with <b>bcrypt</b> package and all data is restricted only for logged users.
   Also there are two implemented languages to choose from: PL and EN.</br>
 </p>
   
