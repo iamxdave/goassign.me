@@ -55,7 +55,7 @@
   * Follow the guide
     > https://github.com/git-guides/install-git
 * [Node.JS](https://nodejs.org/en/) and [Express.JS](https://expressjs.com/)
-  * Packages should be installed automatically, but in case they don't install nugget package manager and following packages
+  * Packages should be installed automatically, but in case they don't install nugget package manager and following packages:
     - ```bcryptjs```
     - ```cookie-parser```
     - ```dotenv```
