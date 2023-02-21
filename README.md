@@ -126,7 +126,18 @@ npm run start
 
   _The application has only one page on which website redirect the user on start._
 
-  _A short gif of main page, logging in and changing app language._
+  _List of existing users and actions to their data_
+  
+![image](https://user-images.githubusercontent.com/74014874/220432179-71babab8-0cac-4d81-8717-e92c074f6796.png)
+
+  _Details of the first user and his permissions for the notes_
+
+![image](https://user-images.githubusercontent.com/74014874/220432718-2efc38c1-5a40-4118-8207-c318307cb43a.png)
+![image](https://user-images.githubusercontent.com/74014874/220432818-723d6f57-f2e1-482d-ba98-720053fb1233.png)
+
+  _I recorded a short gifs to represent how the app works in a practise._
+
+  _A short gif of the main page, logging in and changing app language._
   
 ![Login](https://user-images.githubusercontent.com/74014874/220417258-40f0f9c8-80ca-4233-ac0b-c5a2c1cd6e73.gif)
 
