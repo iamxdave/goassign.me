@@ -139,14 +139,15 @@ npm run start
 <!-- CONTRIBUTING -->
 ## Contributing :heart:
 
- Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
+<p align="justify">
+ Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are <b>greatly appreciated</b>.
+</p>
 
 <br/>
 
 <!-- LICENSE -->
 ## License 📝
-<p> 
+<p align="justify"> 
  Copyright 2022 iamxdave
 
  Licensed under the Apache License, Version 2.0 (the "License");
@@ -156,7 +157,7 @@ npm run start
 
 > http://www.apache.org/licenses/LICENSE-2.0
 
-<p> 
+<p align="justify"> 
  Unless required by applicable law or agreed to in writing, software
  distributed under the License is distributed on an "AS IS" BASIS,
  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
