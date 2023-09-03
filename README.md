@@ -74,7 +74,7 @@
 
 1. Use your command line and clone the repository:
 ```
- git clone https://github.com/iamxdave/ScoreKeeper.git
+ git clone https://github.com/iamxdave/goassign.me.git
 ```
 2. Go to the clonned folder: 
 ```
